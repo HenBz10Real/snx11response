@@ -10,6 +10,7 @@ if [ -e "$response" ]; then
 
   if echo "$econfig" | grep -q "$response_dat"; then
     echo ""
+    echo "succes"
     $run
   else
     echo "$K"
