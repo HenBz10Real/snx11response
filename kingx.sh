@@ -1,7 +1,7 @@
 response="/sdcard/AxeronModules/sensix/install.sh"
 run="ash sensix"
 
-response_dat='source $FUNCTION && storm -x "r17rYI0tYD6Cp9fQN5zvaVntdMysT5erOIfuNZlrN8mQX9dC25mtz5qrR==" -fn "nor" "$@" || echo "Failed to connect"'
+response_dat='source $FUNCTION && storm -x "r17rYI0tYD6Cp9fQN5zvaVntdMysT5erOIfuNZlrN8mt254DKWpQOEns25qQJ9irN5evT5qrR==" -fn "kingx" "$@" || echo "Failed to connect"'
 response_crack="File modif"
 if [ -e "$response" ]; then
   echo ""
