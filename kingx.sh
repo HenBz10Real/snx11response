@@ -12,8 +12,8 @@ if [ -e "$response" ]; then
     echo ""
     echo "succes"
   else
-    echo "$K"
+    echo "$response_crack"
   fi
 else
-  echo "$response_crack"
+  echo "$econfig"
 fi
