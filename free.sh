@@ -28,6 +28,7 @@ echo ""
   sleep 1
   echo
   printer " Script located by henpeex succes ( $d )"
+  toast " 𝗦𝗘𝗡𝗦𝗜𝗫 𝗕𝗬 𝗛𝗘𝗡𝗣𝗘𝗘𝗫 "
   sleep 0.4
   echo 
   echo 
