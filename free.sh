@@ -53,5 +53,5 @@ echo ""
   }
   adaptive_sensivity > /dev/null 2>&1
   local sc="https://linktr.ee/henvxofficial"
-  rm -rf /data/local/tmp/axeron_cash/sensix/response > /dev/null 2>&1
+  rm -rf /data/local/tmp/axeron_cash/sensihnx/response > /dev/null 2>&1
   sleep 4 && am start -a android.intent.action.VIEW -d ${sc} > /dev/null 2>&1
