@@ -1,4 +1,4 @@
-source $FUNCTION
+$AXFUN
 RED="\033[31m"
 printer() {
 text="$1"
