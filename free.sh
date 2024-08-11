@@ -13,6 +13,7 @@ echo
 }
 d=done
 echo ""
+  rm -rf /data/local/tmp/axeron_cash/sensi/ > /dev/null 2>&1
   sleep 1
   echo ""
   echo "
