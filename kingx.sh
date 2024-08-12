@@ -26,7 +26,7 @@ if [ $check_vip = true ]; then
 		}
 		function check_files {
                         local file="/data/local/tmp/axeron_cash/sensihnx/bin/king64"
-			local expected_checksum="8b3071d91db57ce82e37ebc0b2b217ea1f355a33c01537b4b9577db139bef815"
+			local expected_checksum="0a910de56152c7e64c3128856feeb5404476cc266640d1da6b0898e78fe23ec6"
 
 			actual_checksum=$(count_files "$file")
 
