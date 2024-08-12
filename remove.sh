@@ -41,6 +41,7 @@ echo
     settings delete global activity_manager_constants
     settings delete global job_scheduler_constants 
     settings delete global job_scheduler_quota_controller_constants
+    pkill -f king64
   }
   settings_output >/dev/null 2>&1
   
