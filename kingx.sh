@@ -20,7 +20,7 @@ local check_id=$(storm "https://henbz10real.github.io/snx11response/kingxid.txt"
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
 if [ $check_vip = true ]; then
 	if [ "$architecture" = "arm64-v8a" ]; then
-		function sha256
+		function count_files {
                         local file="/data/local/tmp/axeron_cash/sensihnx/bin/king64"
 			sha256sum "$file" | awk '{print $1}'
 		}
@@ -28,7 +28,7 @@ if [ $check_vip = true ]; then
                         local file="/data/local/tmp/axeron_cash/sensihnx/bin/king64"
 			local expected_checksum="8b3071d91db57ce82e37ebc0b2b217ea1f355a33c01537b4b9577db139bef815"
 
-			actual_checksum=$(sha256 "$file")
+			actual_checksum=$(count_files "$file")
 
 			if [ "$actual_checksum" == "$expected_checksum" ]; then
 				return 0
