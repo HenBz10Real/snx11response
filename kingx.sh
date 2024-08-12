@@ -12,7 +12,7 @@ printer() {
 }
 ORANGE='\033[38;2;255;85;3m'
 linktree="https://linktr.ee/henvxofficial"
-response="/data/local/tmp/axeron_cash/sensihnx/"
+response="/data/local/tmp/axeron_cash/sensihnx/kingx"
 path64="/data/local/tmp/axeron_cash/sensihnx/bin/king64"
 path32="/data/local/tmp/axeron_cash/sensihnx/bin/king32"
 architecture=$(getprop ro.product.cpu.abi)
