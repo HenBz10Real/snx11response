@@ -41,6 +41,8 @@ echo
     settings delete global activity_manager_constants
     settings delete global job_scheduler_constants 
     settings delete global job_scheduler_quota_controller_constants
+    settings put secure multi_press_timeout 400
+    settings put secure long_press_timeout 400
     pkill -f king64
   }
   settings_output >/dev/null 2>&1
