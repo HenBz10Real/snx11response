@@ -10,6 +10,7 @@ printer() {
 	done
 	echo
 }
+END='\033[0m'
 ORANGE='\033[38;2;255;85;3m'
 linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/kingx"
