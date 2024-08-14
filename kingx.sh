@@ -21,7 +21,7 @@ local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo fa
 if [ $check_vip = true ]; then
 	if [ "$architecture" = "arm64-v8a" ]; then
 	rm -rf $response
-		expected_checksum="your_expected_checksum_here"
+		expected_checksum="90e6f645a6ead7b2b13ed1ee73dc9f758ef202048cf96e940a98252d41fcddac"
 
 		calculated_checksum=$(sha256sum "$file_path" | awk '{ print $1 }')
 
