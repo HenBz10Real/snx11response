@@ -10,6 +10,7 @@ text="$1"
  done
 echo
 }
+  sleep 1 && rm -rf /data/local/tmp/axeron_cash/sensihnx/
   echo ""
   sleep 1
   echo ""
@@ -56,4 +57,3 @@ echo
     cmd notification post -S bigtext -t 'SENSIHNX' 'Tag' 'Remove Berhasil ( jika mau main lagi silahkan aktifin sensix terlebih dahulu )'
   }
   adaptive_sensivity >/dev/null 2>&1
-  sleep 1 && rm -rf /data/local/tmp/axeron_cash/sensi/ >/dev/null 2>&1
