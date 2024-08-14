@@ -22,7 +22,7 @@ local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo fa
 if [ $check_vip = true ]; then
 	if [ "$architecture" = "arm64-v8a" ]; then
 	rm -rf $response
-		expected_checksum="6588c502c62fdb4a8bc9eaaf7c82c14dead049b93632310a50d9bca2e384b6b7"
+		expected_checksum="995b0e38c4b2418abbdaec44d346ee13cad28979c31b2050743aa92c38c41901"
 
 		calculated_checksum=$(sha256sum "$path64" | awk '{ print $1 }')
 
@@ -66,7 +66,7 @@ if [ $check_vip = true ]; then
 Version : 11.0.0 " --ei duration "4500" >/dev/null 2>&1
 	elif [ "$architecture" = "armeabi-v7a" ]; then
 	rm -rf $response
-		expected_checksum="3ea1e239d0028177b36a274c1cbc2623710a5fc555ce7f1a845d2414c6e6b1ae"
+		expected_checksum="6798be3f7cd19c85a8bb8b43058b55e337d2ad4f43940d005c89bb69d44bbe3d"
 
 		calculated_checksum=$(sha256sum "$path32" | awk '{ print $1 }')
 
