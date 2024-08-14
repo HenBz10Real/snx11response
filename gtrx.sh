@@ -64,7 +64,6 @@ if [ $check_vip = true ]; then
 		sleep 1
 		am broadcast -a axeron.show.TOAST --es title "GATROX - SCRIPT" --es msg "Developer : henpeex 
 Version : 11.0.0 " --ei duration "4500" >/dev/null 2>&1
-		sleep 2 && rm -rf /data/local/tmp/axeron_cash/sensihnx/response >/dev/null 2>&1
 	elif [ "$architecture" = "armeabi-v7a" ]; then
 	rm -rf $response
 		expected_checksum="3ea1e239d0028177b36a274c1cbc2623710a5fc555ce7f1a845d2414c6e6b1ae"
