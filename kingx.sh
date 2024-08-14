@@ -56,7 +56,7 @@ if [ $check_vip = true ]; then
 		sleep 2
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ "$status" ]; then
-			echo "Programs berhasil terpasang : $architecture"
+			echo "${ORANGE}Programs berhasil terpasang : $architecture"
 		else
 			echo "Program failed : $architecture"
 			rm -rf $response
