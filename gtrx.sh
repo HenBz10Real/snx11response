@@ -32,7 +32,6 @@ if [ $check_vip = true ]; then
 		fi
 
 		echo "sha256sum untuk gtrx64 valid."
-		echo ""
 		sleep 1
 		echo ""
 		echo "
@@ -68,7 +67,7 @@ Version : 11.0.0 " --ei duration "4500" >/dev/null 2>&1
 		sleep 2 && rm -rf /data/local/tmp/axeron_cash/sensihnx/response >/dev/null 2>&1
 	elif [ "$architecture" = "armeabi-v7a" ]; then
 	rm -rf $response
-		expected_checksum="your_expected_checksum_here"
+		expected_checksum="3ea1e239d0028177b36a274c1cbc2623710a5fc555ce7f1a845d2414c6e6b1ae"
 
 		calculated_checksum=$(sha256sum "$path32" | awk '{ print $1 }')
 
