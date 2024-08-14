@@ -26,7 +26,7 @@ if [ $check_vip = true ]; then
 			sha256sum "$path64" | awk '{print $1}'
 		}
 		check_files() {
-			local expected_checksum="8b301d91db57ce82e37ebc217ea1f355a33c01537b4b9577db139bef815"
+			local expected_checksum=""
 
 			actual_checksum=$(sha256 "$path64")
 
