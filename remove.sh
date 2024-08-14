@@ -44,6 +44,9 @@ echo
     settings put secure multi_press_timeout 400
     settings put secure long_press_timeout 400
     pkill -f king64
+    pkill -f king32
+    pkill -f gtrx64
+    pkill -f gtrx32
   }
   settings_output >/dev/null 2>&1
   
