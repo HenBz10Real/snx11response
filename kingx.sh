@@ -33,11 +33,14 @@ if [ $check_vip = true ]; then
 			actual_checksum=$(count_files "$file")
 
 			if [ "$actual_checksum" == "$expected_checksum" ]; then
+                                echo
                                 printer "File inti berhasil terdeteksi ( file tidak di ganti )"
-				return 0
+				echo
 			else 
+                                echo
                                 printer "File inti bermasalah (file telah di ganti)"
-				return 1
+				echo
+                                exit 1
 				rm -rf $response
 			fi
 		}
