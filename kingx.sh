@@ -21,12 +21,15 @@ local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo fa
 if [ $check_vip = true ]; then
 	if [ "$architecture" = "arm64-v8a" ]; then
 	rm -rf $response
-		expected_checksum="90e6f645a6ead7b2b13ed1ee73dc9f758ef202048cf96e940a98252d41fcddac"
+		expected_checksum="19cc9b746b462b593ee3ccd549f42513e28914c7b40a9944c265e93b95bc6964"
 
 		calculated_checksum=$(sha256sum "$path64" | awk '{ print $1 }')
 
 		if [ "$calculated_checksum" != "$expected_checksum" ]; then
+                        echo ""
 			echo "sha256check files king64 tidak valid."
+                        echo ""
+			echo ">ada update ss ini + kirim ke admin"
 			exit 1
 		fi
 
