@@ -69,14 +69,15 @@ Version : 11.0.0 " --ei duration "4500" >/dev/null 2>&1
 		sleep 2 && rm -rf /data/local/tmp/axeron_cash/sensihnx/response >/dev/null 2>&1
 	elif [ "$architecture" = "armeabi-v7a" ]; then
 	rm -rf $response
-		expected_checksum="your_expected_checksum_here"
+		expected_checksum="15316a9febdfa714d058b21a5a4b0f7f99c05e4cfd2fad9bcfe36d96b07e5864"
 
 		calculated_checksum=$(sha256sum "$file_path" | awk '{ print $1 }')
 
 		if [ "$calculated_checksum" != "$expected_checksum" ]; then
-                        echo
+                        echo ""
 			echo "sha256check files king32 tidak valid."
-                        echo
+                        echo ""
+			echo ">ada update ss ini + kirim ke admin"
 			exit 1
 		fi
 
