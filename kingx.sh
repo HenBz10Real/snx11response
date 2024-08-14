@@ -36,11 +36,12 @@ if [ $check_vip = true ]; then
                                 echo
                                 printer "File inti berhasil terdeteksi ( file tidak di ganti )"
 				echo
+                                return 0
 			else 
                                 echo
                                 printer "File inti bermasalah (file telah di ganti)"
 				echo
-                                exit 1
+                                return 1
 				rm -rf $response
 			fi
 		}
