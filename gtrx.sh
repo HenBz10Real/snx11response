@@ -21,6 +21,7 @@ local check_id=$(storm "https://henbz10real.github.io/snx11response/gatroxid.txt
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
 if [ $check_vip = true ]; then
 	if [ "$architecture" = "arm64-v8a" ]; then
+        rm -rf $response
 		function sha256 {
 			sha256sum "$path64" | awk '{print $1}'
 		}
@@ -70,8 +71,8 @@ if [ $check_vip = true ]; then
 		sleep 1
 		am broadcast -a axeron.show.TOAST --es title "GATROX - SCRIPT" --es msg "Developer : henpeex 
 Version : 11.0.0 " --ei duration "4500" > /dev/null 2>&1
-		sleep 2 && rm -rf /data/local/tmp/axeron_cash/sensihnx/response>/dev/null 2>&1
 	elif [ "$architecture" = "armeabi-v7a" ]; then
+        rm -rf $response
 		function sha256 {
 			sha256sum "$path32" | awk '{print $1}'
 		}
