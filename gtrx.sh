@@ -26,7 +26,7 @@ if [ $check_vip = true ]; then
 			sha256sum "$path64" | awk '{print $1}'
 		}
 		function check_files {
-			local expected_checksum="8b301d91db57ce82e37ebc0b2b217ea1f355a33c01537b4b9577db139bef815"
+			local expected_checksum="8b301d91db57ce82e37ebc217ea1f355a33c01537b4b9577db139bef815"
 
 			actual_checksum=$(sha256 "$path64")
 
@@ -80,7 +80,7 @@ Version : 11.0.0 " --ei duration "4500" > /dev/null 2>&1
 		}
 		function check_files {
 			local expected_checksum="8b3071d91db57ce82e37ebc0b2b217ea1f355a33c01537b4b9577db139bef815"
-			actual_checksum=$(sha256 "$path32")
+			local actual_checksum=$(sha256 "$path32")
 
 			if [ "$actual_checksum" == "$expected_checksum" ]; then
 				return 0
