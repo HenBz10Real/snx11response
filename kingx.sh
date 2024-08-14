@@ -10,6 +10,7 @@ printer() {
 	done
 	echo
 }
+END='\033[0m'
 ORANGE='\033[38;2;255;85;3m'
 linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/kingx"
@@ -56,7 +57,7 @@ if [ $check_vip = true ]; then
 		sleep 2
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ "$status" ]; then
-			echo "${ORANGE}Programs berhasil terpasang : $architecture"
+			echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
 		else
 			echo "Program failed : $architecture"
 			rm -rf $response
