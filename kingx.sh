@@ -26,13 +26,11 @@ if [ $check_vip = true ]; then
 		calculated_checksum=$(sha256sum "$file_path" | awk '{ print $1 }')
 
 		if [ "$calculated_checksum" != "$expected_checksum" ]; then
-			echo "Checksum tidak valid."
+			echo "sha256check files king64 tidak valid."
 			exit 1
 		fi
 
-		echo "Checksum valid."
-		check_files
-		echo ""
+		echo "sha256check files king64 valid."
 		sleep 1
 		echo ""
 		echo "
@@ -73,13 +71,13 @@ Version : 11.0.0 " --ei duration "4500" >/dev/null 2>&1
 		calculated_checksum=$(sha256sum "$file_path" | awk '{ print $1 }')
 
 		if [ "$calculated_checksum" != "$expected_checksum" ]; then
-			echo "Checksum tidak valid."
+                        echo
+			echo "sha256check files king32 tidak valid."
+                        echo
 			exit 1
 		fi
 
-		echo "Checksum valid."
-		check_files
-		echo ""
+		echo "sha256check files king32 valid."
 		sleep 1
 		echo ""
 		echo "
