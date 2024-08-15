@@ -21,7 +21,7 @@ local url="https://henbz10real.github.io/snx11response/bin/king32"
 		status=$(pgrep -f king32) >/dev/null 2>&1
 		if [ ! "$status" ]; then
 			xtorm "$url" -fn "king32" >/dev/null 2>&1
-                        
+			nohup ${HNXBIN}king32 >/dev/null 2>&1 &
 		fi 
 		sleep 2
 		status=$(pgrep -f king32) >/dev/null 2>&1
