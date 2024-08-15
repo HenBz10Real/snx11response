@@ -13,14 +13,14 @@ printer() {
 END='\033[0m'
 HNXBIN="/data/local/tmp"
 ORANGE='\033[38;2;255;85;3m'
-local url="https://henbz10real.github.io/snx11response/"
+local url="https://henbz10real.github.io/snx11response/bin/king64"
 	rm -rf $response
 		sleep 0.1
 		echo
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			storm -rP "$HNXBIN" -x "${url}/bin/king64" -fn "king64" "$@"
+			xtorm "$url" -fn "king64" "$@"
 		fi 
 		sleep 2
 		status=$(pgrep -f king64) >/dev/null 2>&1
