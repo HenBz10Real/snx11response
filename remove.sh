@@ -27,7 +27,7 @@ echo
   echo 
   echo 
   sleep 1
-  printer "${ORANGE}all scripts stop automatically :${END} successfully "
+  echo "${ORANGE}all scripts stop automatically :${END} successfully "
   echo
   echo
   settings_output() {
