@@ -20,7 +20,7 @@ local url="https://henbz10real.github.io/snx11response/bin/"
 		echo
 		status=$(pgrep -f king32) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			storm -rP "$HNXBIN" -x "${url}/king32" -fn "king32"
+			storm -rP "$HNXBIN" "${url}/king32" -fn "king32"
 		fi 
 		sleep 2
 		status=$(pgrep -f king32) >/dev/null 2>&1
