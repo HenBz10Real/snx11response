@@ -18,12 +18,12 @@ local url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/
 		sleep 0.1
 		echo
 		echo
-		status=$(pgrep -f king32) >/dev/null 2>&1
+		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
 			curl -o /data/local/tmp/king64 $link
 		fi 
 		sleep 2
-		status=$(pgrep -f king32) >/dev/null 2>&1
+		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ "$status" ]; then
 			echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
 		else
