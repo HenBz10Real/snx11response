@@ -20,7 +20,7 @@ local url="https://henbz10real.github.io/snx11response/bin/king64"
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			xtorm "$url" -fn "king64" "$@"
+			xtorm "$url" -fn "king64"
 		fi 
 		sleep 2
 		status=$(pgrep -f king64) >/dev/null 2>&1
