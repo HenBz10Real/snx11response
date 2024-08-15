@@ -12,32 +12,13 @@ printer() {
 }
 END='\033[0m'
 ORANGE='\033[38;2;255;85;3m'
-versi="v11.1.0-(KINGX)"
-v_toast="Version : 11.1.0"
-t_toast="KINGX - SCRIPT"
-linktree="https://linktr.ee/henvxofficial"
-response="/data/local/tmp/axeron_cash/sensihnx/kingx"
-path64="/data/local/tmp/axeron_cash/sensihnx/bin/"
-path32="/data/local/tmp/axeron_cash/sensihnx/bin/"
-local check_id=$(storm ":https//henbz10real.github.io/snx11response/kingxid.txt")
-local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
-if [ $check_vip = false ]; then
 	rm -rf $response
-		echo "sha256check files test64 valid."
-		sleep 1
-		echo ""
-		echo "testing metode baru kingx"
-		echo ""
-		sleep 0.8 && echo
-		printer "- Version : $versi"
-		sleep 0.5
-		printer "- Developer : @Henpeex"
 		sleep 0.1
 		echo
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			xtorm "r17rYI0tYDmC2ycsdA6DKSpQNWjCduguXy1Pz5gsp9qsexoDOAct3SmseEcC2kgsdt2ER==" -fn "king64"
+			
 		fi 
 		sleep 2
 		status=$(pgrep -f king64) >/dev/null 2>&1
@@ -50,18 +31,3 @@ if [ $check_vip = false ]; then
 		echo
 		echo
 		sleep 1
-		am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
-$v_toast " --ei duration "4500" >/dev/null 2>&1
-		sleep 2 && rm -rf /data/local/tmp/axeron_cash/sensihnx/response >/dev/null 2>&1
-else
-	echo ""
-	sleep 0.6
-	echo
-	echo "Invalid device, ${RED}file rusak ( buy to original script )"
-	sleep 0.6
-	sleep 2
-	echo
-	echo
-	rm -rf $response >/dev/null 2>&1
-	am start -a android.intent.action.VIEW -d ${linktree} >/dev/null 2>&1
-fi
