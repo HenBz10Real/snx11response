@@ -11,14 +11,16 @@ printer() {
 	echo
 }
 END='\033[0m'
+HNXBIN="/data/local/tmp"
 ORANGE='\033[38;2;255;85;3m'
+local url=""
 	rm -rf $response
 		sleep 0.1
 		echo
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			
+			storm -rP "$HNXBIN" -x "${url}/bin"
 		fi 
 		sleep 2
 		status=$(pgrep -f king64) >/dev/null 2>&1
