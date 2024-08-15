@@ -10,6 +10,8 @@ text="$1"
  done
 echo
 }
+  END='\033[0m'
+  ORANGE='\033[38;2;255;85;3m'
   sleep 1 && rm -rf /data/local/tmp/axeron_cash/sensihnx/
   echo ""
   sleep 1
@@ -25,9 +27,10 @@ echo
   echo 
   echo 
   sleep 1
-  printer " berhasil terhapus : success "
+  printer "${ORANGE}all scripts stop automatically :${END} successfully "
+  echo
+  echo
   settings_output() {
-  local dalvik=1
     settings delete global disable_window_blurs
     settings delete global accessibility_reduce_transparency
     settings delete global zram_enabled
@@ -48,6 +51,8 @@ echo
     pkill -f king32
     pkill -f gtrx64
     pkill -f gtrx32
+    pkill -f fzx64
+    pkill -f fzx32
   }
   settings_output >/dev/null 2>&1
   
