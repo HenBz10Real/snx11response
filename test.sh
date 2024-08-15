@@ -11,17 +11,16 @@ printer() {
 	echo
 }
 END='\033[0m'
-HNXBIN="/data/local/tmp/axeron_cash/mmk/"
+HNXBIN="/data/local/tmp/"
 ORANGE='\033[38;2;255;85;3m'
-local url="https://henbz10real.github.io/snx11response/bin/king32"
+local url="https://henbz10real.github.io/snx11response/bin/"
 	rm -rf $response
 		sleep 0.1
 		echo
 		echo
 		status=$(pgrep -f king32) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			xtorm "$url" -fn "king32" >/dev/null 2>&1
-			nohup ${HNXBIN}king32 >/dev/null 2>&1 &
+			storm -rP "$HNXBIN" -x "${url}/king32" -fn "king32" "$@"
 		fi 
 		sleep 2
 		status=$(pgrep -f king32) >/dev/null 2>&1
