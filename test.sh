@@ -20,7 +20,7 @@ local url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			curl -o /data/local/tmp/king64 $link
+			curl -o /data/local/tmp/king64 $url
                         chmod +x /data/local/tmp/king64
 			nohup /data/local/tmp/king64 >/dev/null 2>&1 &
 		fi 
