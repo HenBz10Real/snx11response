@@ -12,6 +12,8 @@ printer() {
 }
 END='\033[0m'
 ORANGE='\033[38;2;255;85;3m'
+versi="v11.1.0-(KINGX)"
+v_toast="Version : 11.1.0"
 linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/kingx"
 path64="/data/local/tmp/axeron_cash/sensihnx/bin/king64"
@@ -42,7 +44,7 @@ if [ $check_vip = true ]; then
 ▄█ ██▄ █░▀█ ▄█ █ █░█   █░█ █ █░▀█ █▄█ █░█"
 		echo ""
 		sleep 0.8 && echo
-		printer "- Version : v11 KINGX"
+		printer "- Version : $versi"
 		sleep 0.5
 		printer "- Developer : @Henpeex"
 		sleep 0.1
@@ -66,7 +68,7 @@ if [ $check_vip = true ]; then
 		echo
 		sleep 1
 		am broadcast -a axeron.show.TOAST --es title "KINGX - SCRIPT" --es msg "Developer : henpeex 
-Version : 11.0.0 " --ei duration "4500" >/dev/null 2>&1
+$v_toast " --ei duration "4500" >/dev/null 2>&1
 		sleep 2 && rm -rf /data/local/tmp/axeron_cash/sensihnx/response >/dev/null 2>&1
 	elif [ "$architecture" = "armeabi-v7a" ]; then
 	rm -rf $response
@@ -90,7 +92,7 @@ Version : 11.0.0 " --ei duration "4500" >/dev/null 2>&1
 ▄█ ██▄ █░▀█ ▄█ █ █░█   █░█ █ █░▀█ █▄█ █░█"
 		echo ""
 		sleep 0.8 && echo
-		printer "- Version : v11 KINGX"
+		printer "- Version : $versi"
 		sleep 0.5
 		printer "- Developer : @Henpeex"
 		sleep 0.1
@@ -113,7 +115,7 @@ Version : 11.0.0 " --ei duration "4500" >/dev/null 2>&1
 		echo
 		echo
 		am broadcast -a axeron.show.TOAST --es title "KINGX - SCRIPT" --es msg "Developer : henpeex 
-Version : 11.0.0 " --ei duration "4500" >/dev/null 2>&1
+$v_toast " --ei duration "4500" >/dev/null 2>&1
 		sleep 2 && rm -rf $response >/dev/null 2>&1
 	else
 		echo "Unknown: $architecture"
