@@ -42,7 +42,7 @@ if [ $check_vip = true ]; then
 		status=$(pgrep -f gtrx64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
 			curl -o /data/local/tmp/gtrx64 $url64
-            chmod +x /data/local/tmp/gtrx64
+                        chmod +x /data/local/tmp/gtrx64
 			nohup /data/local/tmp/gtrx64 >/dev/null 2>&1 &
 		fi
 		sleep 2
