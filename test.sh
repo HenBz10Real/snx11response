@@ -37,12 +37,12 @@ if [ $check_vip = true ]; then
 		sleep 0.1
 		echo
 		echo
-		status=$(pgrep -f test64) >/dev/null 2>&1
+		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			xtorm "https//henbz10real.github.io/snx11response/bin/test64"
+			xtorm "https//henbz10real.github.io/snx11response/bin/king64"
 		fi
 		sleep 2
-		status=$(pgrep -f test64) >/dev/null 2>&1
+		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ "$status" ]; then
 			echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
 		else
