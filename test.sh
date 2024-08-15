@@ -20,7 +20,7 @@ local url=""
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			storm -rP "$HNXBIN" -x "${url}/bin"
+			storm -rP "$HNXBIN" -x "${url}/bin/king64" -fn "king64" "$@"
 		fi 
 		sleep 2
 		status=$(pgrep -f king64) >/dev/null 2>&1
