@@ -1,4 +1,4 @@
-source $FUNCTION
+$AXFUN
 printer() {
 	text="$1"
 	color="$2"
