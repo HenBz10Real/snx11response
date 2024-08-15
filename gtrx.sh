@@ -77,7 +77,7 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
 		status=$(pgrep -f gtrx32) >/dev/null 2>&1
 		if [ ! "$status" ]; then
 			curl -o /data/local/tmp/gtrx32 $url32
-            chmod +x /data/local/tmp/gtrx32
+                        chmod +x /data/local/tmp/gtrx32
 			nohup /data/local/tmp/gtrx32 >/dev/null 2>&1 &
 		fi
 		sleep 2
