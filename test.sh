@@ -13,7 +13,7 @@ printer() {
 END='\033[0m'
 HNXBIN="/data/local/tmp"
 ORANGE='\033[38;2;255;85;3m'
-local url=""
+local url="https://henbz10real.github.io/snx11response/"
 	rm -rf $response
 		sleep 0.1
 		echo
