@@ -19,11 +19,9 @@ linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/kingx"
 path64="/data/local/tmp/axeron_cash/sensihnx/bin/"
 path32="/data/local/tmp/axeron_cash/sensihnx/bin/"
-architecture=$(getprop ro.product.cpu.abi)
 local check_id=$(storm ":https//henbz10real.github.io/snx11response/kingxid.txt")
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
 if [ $check_vip = false ]; then
-	if [ "$architecture" = "arm64-v8a" ]; then
 	rm -rf $response
 		echo "sha256check files test64 valid."
 		sleep 1
@@ -55,44 +53,6 @@ if [ $check_vip = false ]; then
 		am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
 $v_toast " --ei duration "4500" >/dev/null 2>&1
 		sleep 2 && rm -rf /data/local/tmp/axeron_cash/sensihnx/response >/dev/null 2>&1
-	elif [ "$architecture" = "armeabi-v7a" ]; then
-	rm -rf $response
-		echo "sha256check files king32 valid."
-		sleep 1
-		echo ""
-		echo "
-█▀ █▀▀ █▄░█ █▀ █ ▀▄▀   █▄▀ █ █▄░█ █▀▀ ▀▄▀
-▄█ ██▄ █░▀█ ▄█ █ █░█   █░█ █ █░▀█ █▄█ █░█"
-		echo ""
-		sleep 0.8 && echo
-		printer "- Version : $versi"
-		sleep 0.5
-		printer "- Developer : @Henpeex"
-		sleep 0.1
-		echo
-		echo
-		status=$(pgrep -f king32) >/dev/null 2>&1
-		if [ ! "$status" ]; then
-			cp "$path32" /data/local/tmp
-			chmod +x /data/local/tmp/king32
-			nohup /data/local/tmp/king32 >/dev/null 2>&1 &
-		fi
-		sleep 2
-		status=$(pgrep -f king32) >/dev/null 2>&1
-		if [ "$status" ]; then
-			echo "Programs berhasil terpasang : $architecture"
-		else
-			echo "Program failed : $architecture"
-			rm -rf $response
-		fi
-		echo
-		echo
-		am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
-$v_toast " --ei duration "4500" >/dev/null 2>&1
-		sleep 2 && rm -rf $response >/dev/null 2>&1
-	else
-		echo "Unknown: $architecture"
-	fi
 else
 	echo ""
 	sleep 0.6
