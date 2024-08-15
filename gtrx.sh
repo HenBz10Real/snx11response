@@ -12,6 +12,7 @@ printer() {
 }
 END='\033[0m'
 ORANGE='\033[38;2;255;85;3m'
+versi="v11.1.0-(GATROX)"
 linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/gtrx"
 path64="/data/local/tmp/axeron_cash/sensihnx/bin/gtrx64"
@@ -39,7 +40,7 @@ if [ $check_vip = true ]; then
 ▄█ ██▄ █░▀█ ▄█ █ █░█   █▄█ ░█░ █▀▄ █░█"
 		echo ""
 		sleep 0.8 && echo
-		printer "- Version : v11.1.0-(GATROX)"
+		printer "- Version : $versi"
 		sleep 0.5
 		printer "- Developer : @Henpeex"
 		sleep 0.1
