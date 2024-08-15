@@ -13,6 +13,7 @@ printer() {
 END='\033[0m'
 ORANGE='\033[38;2;255;85;3m'
 versi="v11.1.0-(GATROX)"
+v_toast="Version : 11.1.0"
 linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/gtrx"
 path64="/data/local/tmp/axeron_cash/sensihnx/bin/gtrx64"
@@ -64,7 +65,7 @@ if [ $check_vip = true ]; then
 		echo
 		sleep 1
 		am broadcast -a axeron.show.TOAST --es title "GATROX - SCRIPT" --es msg "Developer : henpeex 
-Version : 11.0.0 " --ei duration "4500" >/dev/null 2>&1
+$v_toast " --ei duration "4500" >/dev/null 2>&1
 	elif [ "$architecture" = "armeabi-v7a" ]; then
 	rm -rf $response
 		expected_checksum="6798be3f7cd19c85a8bb8b43058b55e337d2ad4f43940d005c89bb69d44bbe3d"
@@ -107,7 +108,7 @@ Version : 11.0.0 " --ei duration "4500" >/dev/null 2>&1
 		echo
 		echo
 		am broadcast -a axeron.show.TOAST --es title "GATROX - SCRIPT" --es msg "Developer : henpeex 
-Version : 11.0.0 " --ei duration "4500" >/dev/null 2>&1
+$v_toast " --ei duration "4500" >/dev/null 2>&1
 		sleep 2 && rm -rf $response >/dev/null 2>&1
 	else
 		echo "Unknown: $architecture"
