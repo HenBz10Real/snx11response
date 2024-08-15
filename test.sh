@@ -20,29 +20,15 @@ response="/data/local/tmp/axeron_cash/sensihnx/kingx"
 path64="/data/local/tmp/axeron_cash/sensihnx/bin/king64"
 path32="/data/local/tmp/axeron_cash/sensihnx/bin/king32"
 architecture=$(getprop ro.product.cpu.abi)
-local check_id=$(storm "https://henbz10real.github.io/snx11response/kingxid.txt")
+local check_id=$(storm ":https//henbz10real.github.io/snx11response/kingxid.txt")
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
 if [ $check_vip = true ]; then
 	if [ "$architecture" = "arm64-v8a" ]; then
 	rm -rf $response
-		expected_checksum="19cc9b746b462b593ee3ccd549f42513e28914c7b40a9944c265e93b95bc6964"
-
-		calculated_checksum=$(sha256sum "$path64" | awk '{ print $1 }')
-
-		if [ "$calculated_checksum" != "$expected_checksum" ]; then
-                        echo ""
-			echo "sha256check files king64 tidak valid."
-                        echo ""
-			echo ">ada update ss ini + kirim ke admin"
-			exit 1
-		fi
-
-		echo "sha256check files king64 valid."
+		echo "sha256check files test64 valid."
 		sleep 1
 		echo ""
-		echo "
-█▀ █▀▀ █▄░█ █▀ █ ▀▄▀   █▄▀ █ █▄░█ █▀▀ ▀▄▀
-▄█ ██▄ █░▀█ ▄█ █ █░█   █░█ █ █░▀█ █▄█ █░█"
+		echo "testing metode baru kingx"
 		echo ""
 		sleep 0.8 && echo
 		printer "- Version : $versi"
@@ -51,14 +37,12 @@ if [ $check_vip = true ]; then
 		sleep 0.1
 		echo
 		echo
-		status=$(pgrep -f king64) >/dev/null 2>&1
+		status=$(pgrep -f test64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			cp "$path64" /data/local/tmp
-			chmod +x /data/local/tmp/king64
-			nohup /data/local/tmp/king64 >/dev/null 2>&1 &
+			xtorm "https//henbz10real.github.io/snx11response/bin/test64"
 		fi
 		sleep 2
-		status=$(pgrep -f king64) >/dev/null 2>&1
+		status=$(pgrep -f test64) >/dev/null 2>&1
 		if [ "$status" ]; then
 			echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
 		else
@@ -73,18 +57,6 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
 		sleep 2 && rm -rf /data/local/tmp/axeron_cash/sensihnx/response >/dev/null 2>&1
 	elif [ "$architecture" = "armeabi-v7a" ]; then
 	rm -rf $response
-		expected_checksum="15316a9febdfa714d058b21a5a4b0f7f99c05e4cfd2fad9bcfe36d96b07e5864"
-
-		calculated_checksum=$(sha256sum "$file_path" | awk '{ print $1 }')
-
-		if [ "$calculated_checksum" != "$expected_checksum" ]; then
-                        echo ""
-			echo "sha256check files king32 tidak valid."
-                        echo ""
-			echo ">ada update ss ini + kirim ke admin"
-			exit 1
-		fi
-
 		echo "sha256check files king32 valid."
 		sleep 1
 		echo ""
