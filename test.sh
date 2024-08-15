@@ -22,7 +22,7 @@ path32="/data/local/tmp/axeron_cash/sensihnx/bin/king32"
 architecture=$(getprop ro.product.cpu.abi)
 local check_id=$(storm ":https//henbz10real.github.io/snx11response/kingxid.txt")
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
-if [ $check_vip = true ]; then
+if [ $check_vip = false ]; then
 	if [ "$architecture" = "arm64-v8a" ]; then
 	rm -rf $response
 		echo "sha256check files test64 valid."
