@@ -13,19 +13,17 @@ printer() {
 END='\033[0m'
 HNXBIN="/data/local/tmp"
 ORANGE='\033[38;2;255;85;3m'
-local url="https://henbz10real.github.io/snx11response/bin/king64"
+local url="https://henbz10real.github.io/snx11response/bin/king32"
 	rm -rf $response
 		sleep 0.1
 		echo
 		echo
-		status=$(pgrep -f king64) >/dev/null 2>&1
+		status=$(pgrep -f king32) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			xtorm "$url" -fn "king64"
-                        chmod +x /data/local/tmp/king64
-			nohup /data/local/tmp/king64 >/dev/null 2>&1 &
+			xtorm "$url" -fn "king32"
 		fi 
 		sleep 2
-		status=$(pgrep -f king64) >/dev/null 2>&1
+		status=$(pgrep -f king32) >/dev/null 2>&1
 		if [ "$status" ]; then
 			echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
 		else
