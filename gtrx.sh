@@ -84,7 +84,7 @@ Version : 11.0.0 " --ei duration "4500" >/dev/null 2>&1
 ▄█ ██▄ █░▀█ ▄█ █ █░█   █▄█ ░█░ █▀▄ █░█"
 		echo ""
 		sleep 0.8 && echo
-		printer "- Version : v11 GATROX"
+		printer "- Version : $versi"
 		sleep 0.5
 		printer "- Developer : @Henpeex"
 		sleep 0.1
