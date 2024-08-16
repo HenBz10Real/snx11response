@@ -41,11 +41,11 @@ if [ $check_vip = true ]; then
 		sleep 0.1
 		echo
 		echo
-		status=$(pgrep -f king64) >/dev/null 2>&1
+		status=$(pgrep -f response) >/dev/null 2>&1
 		if [ ! "$status" ]; then
 			storm -rP "$bin" -s "$url64" "$@"
-	                chmod +x /data/local/tmp/king64
-		        nohup /data/local/tmp/king64 >/dev/null 2>&1 &
+	                chmod +x /data/local/tmp/response
+		        nohup /data/local/tmp/response>/dev/null 2>&1 &
 		fi
 		sleep 2
 		status=$(pgrep -f king64) >/dev/null 2>&1
