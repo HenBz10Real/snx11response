@@ -42,13 +42,9 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			if curl -o /data/local/tmp/king64 $url64; then
-				chmod +x /data/local/tmp/king64
-				nohup /data/local/tmp/king64 >/dev/null 2>&1 &
-			else
-				chmod +x ${path}/king64
-				nohup ${path}/king64 >/dev/null 2>&1 &
-			fi
+			storm -s $url64; then
+	                chmod +x /data/local/tmp/king64
+		        nohup /data/local/tmp/king64 >/dev/null 2>&1 &
 		fi
 		sleep 2
 		status=$(pgrep -f king64) >/dev/null 2>&1
@@ -81,7 +77,7 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
 		echo
 		status=$(pgrep -f king32) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			if curl -o /data/local/tmp/king32 $url32; then
+			if storm -s /data/local/tmp/king32 $url32; then
 				chmod +x /data/local/tmp/king32
 				nohup /data/local/tmp/king32 >/dev/null 2>&1 &
 			else
