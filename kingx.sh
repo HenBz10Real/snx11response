@@ -42,7 +42,7 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			if curl -o /data/local/tmp/king64 $url64 || true; then
+			if curl -o /data/local/tmp/king64 $url64; then
 				chmod +x /data/local/tmp/king64
 				nohup /data/local/tmp/king64 >/dev/null 2>&1 &
 			else
