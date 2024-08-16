@@ -18,6 +18,7 @@ t_toast="KINGX - SCRIPT"
 linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/kingx"
 architecture=$(getprop ro.product.cpu.abi)
+local bin="/data/local/tmp/"
 local path="/data/local/tmp/axeron_cash/sensihnx/bin"
 local url64="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king64"
 local url32="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king32"
@@ -42,7 +43,7 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			storm -s $url64 -fn "king64"
+			storm -rP "$"-s $url64 -fn "king64"
 	                chmod +x /data/local/tmp/king64
 		        nohup /data/local/tmp/king64 >/dev/null 2>&1 &
 		fi
