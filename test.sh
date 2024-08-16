@@ -20,7 +20,7 @@ local url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin"
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			storm -rP "$HNXBIN" -x "${url}/king64"
+			storm -rP "$HNXBIN" "${url}/king64"
                         chmod +x /data/local/tmp/king64
 			nohup /data/local/tmp/king64 >/dev/null 2>&1 &
 		fi 
