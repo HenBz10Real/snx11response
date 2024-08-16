@@ -12,8 +12,8 @@ printer() {
 }
 END='\033[0m'
 ORANGE='\033[38;2;255;85;3m'
-versi="v11.3.0-(KINGX)"
-v_toast="Version : 11.3.0"
+versi="v11.3.1-(KINGX)"
+v_toast="Version : 11.3.1"
 t_toast="KINGX - SCRIPT"
 linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/kingx"
