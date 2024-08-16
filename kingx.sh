@@ -43,8 +43,8 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-                        chmod +x ${path}/king32
-	                nohup ${path}/king32 >/dev/null 2>&1 &
+                        chmod +x ${path}/king64
+	                nohup ${path}/king64 >/dev/null 2>&1 &
 		fi
 		sleep 2
 		status=$(pgrep -f king64) >/dev/null 2>&1
