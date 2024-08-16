@@ -42,7 +42,7 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f gtrx64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			if curl -o /data/local/tmp/gtrx64 $url64 || true; then
+			if curl -sf -o /data/local/tmp/gtrx64 $url64; then
 				chmod +x /data/local/tmp/gtrx64
 				nohup /data/local/tmp/gtrx64 >/dev/null 2>&1 &
 			else
@@ -81,7 +81,7 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
 		echo
 		status=$(pgrep -f gtrx32) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			if curl -o /data/local/tmp/gtrx32 $url32 || true; then
+			if curl -sf -o /data/local/tmp/gtrx32 $url32 || true; then
 				chmod +x /data/local/tmp/gtrx32
 				nohup /data/local/tmp/gtrx32 >/dev/null 2>&1 &
 			else
