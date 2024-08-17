@@ -18,7 +18,7 @@ t_toast="KINGX - HEADTRICK"
 linktree="https://linktr.ee/henvxofficial"
 architecture=$(getprop ro.product.cpu.abi)
 local bin="/data/local/tmp/"
-local url64="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king"
+local url64="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king.sh"
 local url32="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king32"
 local check_id=$(storm "https://henbz10real.github.io/snx11response/function/kingxid.txt")
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
@@ -39,13 +39,13 @@ if [ $check_vip = true ]; then
 		sleep 0.1
 		echo
 		echo
-		status=$(pgrep -f king64) >/dev/null 2>&1
+		status=$(pgrep -f king.sh) >/dev/null 2>&1
 		if [ ! "$status" ]; then
 			storm -rP "$bin" -s "${url64}" -fn "king64" "$@"
                         sh /data/local/tmp/king.sh
 		fi
 		sleep 2
-		status=$(pgrep -f king64) >/dev/null 2>&1
+		status=$(pgrep -f king.sh) >/dev/null 2>&1
 		if [ "$status" ]; then
 			echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
                         am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
