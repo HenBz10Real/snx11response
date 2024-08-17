@@ -13,7 +13,7 @@ detect_architecture() {
     fi
 }
 run_program() {
-    local v_toast="Version : 11.4.2"
+    local v_toast="Version : 11.2.5"
     local t_toast="FREE - HEADSENSX"
     local bin="/data/local/tmp/main"
     local reponse="/data/local/tmp/axeron_cash/sensi/free"
