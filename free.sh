@@ -1,5 +1,4 @@
 $AXFUN
-RED="\033[31m"
 local bin="/data/local/tmp/main"
 printer() {
 text="$1"
@@ -38,7 +37,6 @@ echo ""
 if [ "$1" = kill ]; then
 	if ! pgrep -f main >/dev/null 2>&1; then
 		echo "Program is stopped in the background."
-		rm /data/local/tmp/main
 	else
 		echo "Program failed to stop."
 	fi
