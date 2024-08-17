@@ -42,7 +42,6 @@ if [ "$1" = kill ]; then
 	else
 		echo "Program failed to stop."
 	fi
-	echo ""
 else
 	if ! pgrep -f main >/dev/null 2>&1; then
 		chmod +x /data/local/tmp/main
@@ -54,8 +53,7 @@ else
 	else
 		echo "Program failed to run"
 	fi
-	echo ""
 fi
   local sc="https://linktr.ee/henvxofficial"
   rm -rf $reponse > /dev/null 2>&1
-  sleep 4 && am start -a android.intent.action.VIEW -d ${sc} > /dev/null 2>&1
+  sleep 6 && am start -a android.intent.action.VIEW -d ${sc} > /dev/null 2>&1
