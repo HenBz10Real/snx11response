@@ -12,8 +12,9 @@ text="$1"
 echo
 }
 d=done
+local reponse="/data/local/tmp/axeron_cash/sensi/free"
 echo ""
-  rm -rf /data/local/tmp/axeron_cash/sensi/ > /dev/null 2>&1
+  rm -rf $response > /dev/null 2>&1
   sleep 1
   echo ""
   echo "
@@ -29,7 +30,6 @@ echo ""
   sleep 1
   echo
   printer " Script located by henpeex succes ( $d )"
-  toast " 𝗦𝗘𝗡𝗦𝗜𝗫 𝗕𝗬 𝗛𝗘𝗡𝗣𝗘𝗘𝗫 "
   sleep 0.4
   echo 
   echo 
