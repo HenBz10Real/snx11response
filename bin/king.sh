@@ -25,7 +25,7 @@ sensivityOne() {
     rm -rf /tmp/cache
     rm -r /storage/emulated/0/Android/data/com.dts.freefireth/cache/ 2>/dev/null
     rm -r /storage/emulated/0/Android/data/com.dts.freefiremax/cache/ 2>/dev/null
-    wm size 1350x3075
+    wm size 1620x3680
 }
 
 exec 1>/dev/null
