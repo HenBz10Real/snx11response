@@ -12,8 +12,8 @@ printer() {
 }
 END='\033[0m'
 ORANGE='\033[38;2;255;85;3m'
-versi="v11.3.0-(FOZAX)"
-v_toast="Version : 11.3.0"
+versi="v11.3.1-(FOZAX)"
+v_toast="Version : 11.3.1"
 t_toast="FOZAX - HEADTRICK"
 linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/fozax"
@@ -42,7 +42,7 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f fozx64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			if curl -o /data/local/tmp/fozx64 $url64; then
+			if curl -sf -o /data/local/tmp/fozx64 $url64; then
 				chmod +x /data/local/tmp/fozx64
 				nohup /data/local/tmp/fozx64 >/dev/null 2>&1 &
 			else
@@ -51,7 +51,7 @@ if [ $check_vip = true ]; then
 			fi
 		fi
 		sleep 2
-		status=$(pgrep -f gtrx64) >/dev/null 2>&1
+		status=$(pgrep -f fozx64) >/dev/null 2>&1
 		if [ "$status" ]; then
 			echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
 			am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
@@ -81,7 +81,7 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f fozx32) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			if curl -o /data/local/tmp/fozx32 $url32; then
+			if curl -sf -o /data/local/tmp/fozx32 $url32; then
 				chmod +x /data/local/tmp/fozx32
 				nohup /data/local/tmp/fozx32 >/dev/null 2>&1 &
 			else
