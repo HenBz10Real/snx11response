@@ -43,9 +43,10 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-                        #storm -rP "$bin" -x "${url}/king64" -fn "king64" "$@"
                         chmod +x ${path}/king64
 	                nohup ${path}/king64 >/dev/null 2>&1 &
+                        am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
+                        $v_toast " --ei duration "4500" >/dev/null 2>&1
 		fi
 		sleep 2
 		status=$(pgrep -f king64) >/dev/null 2>&1
@@ -58,8 +59,6 @@ if [ $check_vip = true ]; then
 		echo
 		echo
 		sleep 1
-		am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
-$v_toast " --ei duration "4500" >/dev/null 2>&1
 	elif [ "$architecture" = "armeabi-v7a" ]; then
 		rm -rf $response
 		echo
@@ -78,13 +77,10 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
 		echo
 		status=$(pgrep -f king32) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			if storm -s /data/local/tmp/king32 $url32; then
-				chmod +x /data/local/tmp/king32
-				nohup /data/local/tmp/king32 >/dev/null 2>&1 &
-			else
 				chmod +x ${path}/king32
 				nohup ${path}/king32 >/dev/null 2>&1 &
-			fi
+                                am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
+                                $v_toast " --ei duration "4500" >/dev/null 2>&1
 		fi
 		sleep 2
 		status=$(pgrep -f king32) >/dev/null 2>&1
@@ -96,18 +92,14 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
 		fi
 		echo
 		echo
-		am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
-$v_toast " --ei duration "4500" >/dev/null 2>&1
 		sleep 2 && rm -rf $response >/dev/null 2>&1
 	else
 		echo "Unknown: $architecture"
 	fi
 else
-	echo ""
-	sleep 0.6
+	echo 
 	echo
 	echo "Invalid device, ${RED}file rusak ( buy to original script )"
-	sleep 0.6
 	sleep 2
 	echo
 	echo
