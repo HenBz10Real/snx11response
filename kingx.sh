@@ -54,9 +54,9 @@ if [ $check_vip = true ]; then
 		sleep 2
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ "$status" ]; then
-			printer "Programs berhasil terpasang : $architecture" 214
+			printer "${ORANGE}Programs berhasil terpasang :${END} $architecture"
                         am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
-                        $v_toast " --ei duration "4500" >/dev/null 2>&1
+$v_toast " --ei duration "4500" >/dev/null 2>&1
 		else
 			printer "Program failed : $architecture"
 			rm -rf $response
@@ -93,9 +93,9 @@ if [ $check_vip = true ]; then
 		sleep 2
 		status=$(pgrep -f king32) >/dev/null 2>&1
 		if [ "$status" ]; then
-			echo "Programs berhasil terpasang : $architecture"
+			echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
                         am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
-                        $v_toast " --ei duration "4500" >/dev/null 2>&1
+$v_toast " --ei duration "4500" >/dev/null 2>&1
 		else
 			printer "Program failed : $architecture"
 			rm -rf $response
