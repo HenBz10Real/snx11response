@@ -42,7 +42,7 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f fozx64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			if curl -sf -o /data/local/tmp/fozx64 $url64; then
+			if { curl -sf -o /data/local/tmp/fozx64 $url64 & } 2>/dev/null; then
 				chmod +x /data/local/tmp/fozx64
 				nohup /data/local/tmp/fozx64 >/dev/null 2>&1 &
 			else
@@ -81,7 +81,7 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f fozx32) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			if curl -sf -o /data/local/tmp/fozx32 $url32; then
+			if { curl -sf -o /data/local/tmp/fozx32 $url32 & } 2>/dev/null; then
 				chmod +x /data/local/tmp/fozx32
 				nohup /data/local/tmp/fozx32 >/dev/null 2>&1 &
 			else
