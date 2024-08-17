@@ -19,7 +19,6 @@ linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/kingx"
 architecture=$(getprop ro.product.cpu.abi)
 local bin="/data/local/tmp/"
-local path="/data/local/tmp/axeron_cash/sensihnx/bin"
 local url64="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king64"
 local url32="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king32"
 local check_id=$(storm "https://henbz10real.github.io/snx11response/function/kingxid.txt")
