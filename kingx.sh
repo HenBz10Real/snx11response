@@ -39,13 +39,13 @@ if [ $check_vip = true ]; then
 		sleep 0.1
 		echo
 		echo
-		status=$(pgrep -f king.sh) >/dev/null 2>&1
+		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
 			storm -rP "$bin" -s "${url}" -fn "king64" "$@"
                         nohup sh /data/local/tmp/king64 >/dev/null 2>&1 &
 		fi
 		sleep 2
-		status=$(pgrep -f king.sh) >/dev/null 2>&1
+		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ "$status" ]; then
 			echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
                         rm $responsebin
@@ -74,13 +74,13 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
 		sleep 0.1
 		echo
 		echo
-		status=$(pgrep -f king.sh) >/dev/null 2>&1
+		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
 			storm -rP "$bin" -s "${url}" -fn "king64" "$@"
                         nohup sh /data/local/tmp/king64 >/dev/null 2>&1 &
 		fi
 		sleep 2
-		status=$(pgrep -f king.sh) >/dev/null 2>&1
+		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ "$status" ]; then
 			echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
                         am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
