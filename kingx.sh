@@ -16,7 +16,6 @@ versi="v11.4.3-(KINGX)"
 v_toast="Version : 11.4.2"
 t_toast="KINGX - HEADTRICK"
 linktree="https://linktr.ee/henvxofficial"
-response="/data/local/tmp/axeron_cash/sensihnx/kingx"
 architecture=$(getprop ro.product.cpu.abi)
 local bin="/data/local/tmp/"
 local url64="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king64"
