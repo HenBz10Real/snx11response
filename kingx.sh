@@ -43,13 +43,7 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			curl -sf -o /data/local/tmp/king64 $url64 2>/dev/null && {
-                             chmod +x /data/local/tmp/king64
-                             nohup /data/local/tmp/king64 >/dev/null 2>&1 &
-                        } || {
-                             chmod +x ${path}/king64
-                             nohup ${path}/king64 >/dev/null 2>&1 &
-                        }
+			storm -rP "$bin" -x "${url64}/king64" -fn "ling64" "$@"
 		fi
 		sleep 2
 		status=$(pgrep -f king64) >/dev/null 2>&1
