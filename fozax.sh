@@ -16,7 +16,7 @@ versi="v11.3.0-(FOZAX)"
 v_toast="Version : 11.3.0"
 t_toast="FOZAX - SCRIPT"
 linktree="https://linktr.ee/henvxofficial"
-response="/data/local/tmp/axeron_cash/sensihnx/gtrx"
+response="/data/local/tmp/axeron_cash/sensihnx/fozax"
 architecture=$(getprop ro.product.cpu.abi)
 local path="/data/local/tmp/axeron_cash/sensihnx/bin"
 local url64="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozx32"
@@ -40,14 +40,14 @@ if [ $check_vip = true ]; then
 		sleep 0.1
 		echo
 		echo
-		status=$(pgrep -f fozx32) >/dev/null 2>&1
+		status=$(pgrep -f fozx64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			if curl -o /data/local/tmp/fozx32 $url64; then
-				chmod +x /data/local/tmp/fozx32
-				nohup /data/local/tmp/fozx32 >/dev/null 2>&1 &
+			if curl -o /data/local/tmp/fozx64 $url64; then
+				chmod +x /data/local/tmp/fozx64
+				nohup /data/local/tmp/fozx64 >/dev/null 2>&1 &
 			else
-				chmod +x ${path}/fozx32
-				nohup ${path}/fozx32 >/dev/null 2>&1 &
+				chmod +x ${path}/fozx64
+				nohup ${path}/fozx64 >/dev/null 2>&1 &
 			fi
 		fi
 		sleep 2
