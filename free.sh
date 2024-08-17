@@ -13,6 +13,8 @@ detect_architecture() {
     fi
 }
 run_program() {
+    local t_toast=""
+    local v_toast=""
     local bin="/data/local/tmp/main"
     local reponse="/data/local/tmp/axeron_cash/sensi/free"
     
@@ -46,6 +48,8 @@ run_program() {
         sleep 2
         if pgrep -f main >/dev/null 2>&1; then
             echo "Program is running in the background."
+            am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
+$v_toast " --ei duration "4500" >/dev/null 2>&1
         else
             echo "Program failed to run"
         fi
