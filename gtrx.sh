@@ -54,15 +54,15 @@ if [ $check_vip = true ]; then
 		status=$(pgrep -f gtrx64) >/dev/null 2>&1
 		if [ "$status" ]; then
 			echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
+                        am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
+                        $v_toast " --ei duration "4500" >/dev/null 2>&1
 		else
-			echo "Program failed : $architecture"
+			printer "Program failed : $architecture"
 			rm -rf $response
 		fi
 		echo
 		echo
 		sleep 1
-		am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
-$v_toast " --ei duration "4500" >/dev/null 2>&1
 	elif [ "$architecture" = "armeabi-v7a" ]; then
 		rm -rf $response
 		echo ""
@@ -93,14 +93,14 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
 		status=$(pgrep -f gtrx32) >/dev/null 2>&1
 		if [ "$status" ]; then
 			echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
+                        am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
+                        $v_toast " --ei duration "4500" >/dev/null 2>&1
 		else
-			echo "Program failed : $architecture"
+			printer "Program failed : $architecture"
 			rm -rf $response
 		fi
 		echo
 		echo
-		am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
-$v_toast " --ei duration "4500" >/dev/null 2>&1
 		sleep 2 && rm -rf $response >/dev/null 2>&1
 	else
 		echo "Unknown: $architecture"
