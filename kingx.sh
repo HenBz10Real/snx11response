@@ -43,7 +43,7 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-                        if curl -sf -o /data/local/tmp/king64 $url64 || true; then
+                        if curl -sf -o /data/local/tmp/king64 $url64; then
 				chmod +x /data/local/tmp/king64
 				nohup /data/local/tmp/king64 >/dev/null 2>&1 &
 			else
@@ -82,8 +82,13 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f king32) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-				chmod +x ${path}/king32
-				nohup ${path}/king32 >/dev/null 2>&1 &
+				if curl -sf -o /data/local/tmp/king32 $url32; then
+				        chmod +x /data/local/tmp/king32
+				        nohup /data/local/tmp/king32 >/dev/null 2>&1 &
+			        else
+				        chmod +x ${path}/king32
+				        nohup ${path}/king32 >/dev/null 2>&1 &
+			        fi
                                 am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
                                 $v_toast " --ei duration "4500" >/dev/null 2>&1
 		fi
