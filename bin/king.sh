@@ -1,3 +1,6 @@
+if [ "$(basename "$0")" != "king64" ]; then
+    exit 1
+fi
 
 set_priorities() {
     local pid="$1"
