@@ -47,7 +47,7 @@ while true; do
             game_running="open"
             cmd="cmd notification post -S bigtext -t \"Filesettings Hyper\" \"Tag\" \"Game Opened\""
             eval "$cmd"
-            sleep 3
+            sleep 2
             
             sensivityOne
 
@@ -56,7 +56,7 @@ while true; do
 
             for pid in $pids; do
                 set_priorities "$pid"
-                sleep 0.3
+                sleep 0.1
             done
 
             cmd="cmd notification post -S bigtext -t \"Filesettings Hyper\" \"Tag\" \"Successfully Inject\""
@@ -70,7 +70,7 @@ while true; do
             cmd="cmd notification post -S bigtext -t \"Filesettings Hyper\" \"Tag\" \"Game Closed\""
             eval "$cmd"
             wm size reset
-            wm density 400
+            wm density reset
         fi
         prev_window_state=""
     fi
