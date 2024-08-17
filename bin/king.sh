@@ -34,7 +34,7 @@ exec 2>/dev/null
 prev_window_state=""
 game_running=""
 
-cmd="cmd notification post -S bigtext -t \"Filesettings Hyper\" \"Tag\" \"Version: 2.0 | Author: Henpeex\""
+cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: testing | Author: Henpeex\""
 eval "$cmd"
 
 while true; do
@@ -45,7 +45,7 @@ while true; do
     if [ -n "$buffer" ]; then
         if [ "$prev_window_state" != "active" ]; then
             game_running="open"
-            cmd="cmd notification post -S bigtext -t \"Filesettings Hyper\" \"Tag\" \"Game Opened\""
+            cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
             eval "$cmd"
             sleep 2
             
@@ -59,7 +59,7 @@ while true; do
                 sleep 0.1
             done
 
-            cmd="cmd notification post -S bigtext -t \"Filesettings Hyper\" \"Tag\" \"Successfully Inject\""
+            cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Successfully Inject mode\""
             eval "$cmd"
         fi
         prev_window_state="active"
@@ -67,7 +67,7 @@ while true; do
         if [ "$game_running" = "open" ]; then
             game_running=""
             sleep 1
-            cmd="cmd notification post -S bigtext -t \"Filesettings Hyper\" \"Tag\" \"Game Closed\""
+            cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
             eval "$cmd"
             wm size reset
             wm density reset
