@@ -29,7 +29,7 @@ echo ""
 ▄█ ██▄ █░▀█ ▄█ █ █░█   █▀░ █▀▄ ██▄ ██▄"
   echo ""
   sleep 0.8 && echo
-  printer "- Version : v11.0.0 Free Version"
+  printer "- Version : v11.3.0 Free Version"
   sleep 0.5
   printer "- Developer : @Henpeex"
   sleep 0.1
@@ -45,7 +45,6 @@ if [ "$1" = kill ]; then
 	echo ""
 else
 	if ! pgrep -f main >/dev/null 2>&1; then
-		cp /sdcard/Priority/main /data/local/tmp
 		chmod +x /data/local/tmp/main
 		nohup /data/local/tmp/main >/dev/null 2>&1 &
 	fi
