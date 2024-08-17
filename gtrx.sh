@@ -42,13 +42,13 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f gtrx64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			if curl -sf -o /data/local/tmp/gtrx64 $url64; then
-				chmod +x /data/local/tmp/gtrx64
-				nohup /data/local/tmp/gtrx64 >/dev/null 2>&1 &
-			else
-				chmod +x ${path}/gtrx64
-				nohup ${path}/gtrx64 >/dev/null 2>&1 &
-			fi
+			curl -sf -o /data/local/tmp/gtrx64 $url64 2>/dev/null && {
+                             chmod +x /data/local/tmp/gtrx64
+                             nohup /data/local/tmp/gtrx64 >/dev/null 2>&1 &
+                        } || {
+                             chmod +x ${path}/gtrx64
+                             nohup ${path}/gtrx64 >/dev/null 2>&1 &
+                        }
 		fi
 		sleep 2
 		status=$(pgrep -f gtrx64) >/dev/null 2>&1
@@ -81,13 +81,13 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f gtrx32) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			if curl -sf -o /data/local/tmp/gtrx32 $url32 || true; then
-				chmod +x /data/local/tmp/gtrx32
-				nohup /data/local/tmp/gtrx32 >/dev/null 2>&1 &
-			else
-				chmod +x ${path}/gtrx32
-				nohup ${path}/gtrx32 >/dev/null 2>&1 &
-			fi
+			curl -sf -o /data/local/tmp/gtrx32 $url32 2>/dev/null && {
+                             chmod +x /data/local/tmp/gtrx32
+                             nohup /data/local/tmp/gtrx32 >/dev/null 2>&1 &
+                        } || {
+                             chmod +x ${path}/gtrx32
+                             nohup ${path}/gtrx32 >/dev/null 2>&1 &
+                        }
 		fi
 		sleep 2
 		status=$(pgrep -f gtrx32) >/dev/null 2>&1
