@@ -19,7 +19,7 @@ linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/kingx"
 architecture=$(getprop ro.product.cpu.abi)
 local bin="/data/local/tmp/"
-local path="/data/local/tmp/"
+local path="/data/local/tmp/axeron_cash/sensihnx"
 local url64="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin"
 local url32="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king32"
 local check_id=$(storm "https://henbz10real.github.io/snx11response/function/kingxid.txt")
@@ -43,7 +43,7 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f king64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-                        storm -rP "$bin" -x "${url}/king64" -fn "king64" "$@"
+                        #storm -rP "$bin" -x "${url}/king64" -fn "king64" "$@"
                         chmod +x ${path}/king64
 	                nohup ${path}/king64 >/dev/null 2>&1 &
 		fi
