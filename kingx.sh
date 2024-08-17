@@ -18,13 +18,14 @@ t_toast="KINGX - HEADTRICK"
 linktree="https://linktr.ee/henvxofficial"
 architecture=$(getprop ro.product.cpu.abi)
 local bin="/data/local/tmp/"
+local path="/data/local/tmp/axeron_cash/sensihnx/kingx"
 local responsebin="/data/local/tmp/king64"
 local url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king.sh"
 local check_id=$(storm "https://henbz10real.github.io/snx11response/function/kingxid.txt")
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
 if [ $check_vip = true ]; then
 	if [ "$architecture" = "arm64-v8a" ]; then
-		rm -rf $response
+		rm -rf $path
 		echo ""
 		sleep 1
 		echo ""
@@ -53,13 +54,13 @@ if [ $check_vip = true ]; then
 $v_toast " --ei duration "4500" >/dev/null 2>&1
 		else
 			printer "Program failed : $architecture"
-			rm -rf $response
+			rm -rf $path
 		fi
 		echo
 		echo
 		sleep 1
 	elif [ "$architecture" = "armeabi-v7a" ]; then
-		rm -rf $response
+		rm -rf $path
 		echo
 		sleep 1
 		echo ""
@@ -102,6 +103,6 @@ else
 	sleep 2
 	echo
 	echo
-	rm -rf $response >/dev/null 2>&1
+	rm -rf $path >/dev/null 2>&1
 	am start -a android.intent.action.VIEW -d ${linktree} >/dev/null 2>&1
 fi
