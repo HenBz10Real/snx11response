@@ -51,8 +51,8 @@ echo
     pkill -f king32
     pkill -f gtrx64
     pkill -f gtrx32
-    pkill -f fzx64
-    pkill -f fzx32
+    pkill -f fozx64
+    pkill -f fozx32
   }
   settings_output >/dev/null 2>&1
   
