@@ -21,12 +21,17 @@ set_priorities() {
 }
 
 sensivityOne() {
-    cmd power set-fixed-performance-mode-enabled true
-    rm -rf /tmp/cache
-    rm -r /storage/emulated/0/Android/data/com.dts.freefireth/cache/ 2>/dev/null
-    rm -r /storage/emulated/0/Android/data/com.dts.freefiremax/cache/ 2>/dev/null
-    wm size 1620x3680
+    cmd power set-fixed-performance-mode-enabled true || true
+    rm -rf /tmp/cache || true
+    
+    for dir in /storage/emulated/0/Android/data/com.dts.freefireth/cache/ \
+               /storage/emulated/0/Android/data/com.dts.freefiremax/cache/; do
+        rm -r "$dir" || true
+    done
+
+    wm size 1620x3680 || true
 }
+
 
 exec 1>/dev/null
 exec 2>/dev/null
