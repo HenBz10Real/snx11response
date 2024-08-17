@@ -18,7 +18,7 @@ architecture=$(getprop ro.product.cpu.abi)
 	elif [ "$architecture" = "armeabi-v7a" ]; then
 	  	mv /data/local/tmp/axeron_cash/bin/arm32 $bin
 	fi
-d=done
+local d=done
 local reponse="/data/local/tmp/axeron_cash/sensi/free"
 echo ""
   rm -rf $response > /dev/null 2>&1
