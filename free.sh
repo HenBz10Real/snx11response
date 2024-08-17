@@ -14,9 +14,9 @@ echo
 }
 architecture=$(getprop ro.product.cpu.abi)
 	if [ "$architecture" = "arm64-v8a" ]; then
-		mv /data/local/tmp/axeron_cash/bin/arm64 $bin
+		mv /data/local/tmp/axeron_cash/sensi/bin/arm64 $bin
 	elif [ "$architecture" = "armeabi-v7a" ]; then
-	  	mv /data/local/tmp/axeron_cash/bin/arm32 $bin
+	  	mv /data/local/tmp/axeron_cash/sensi/bin/arm32 $bin
 	fi
 local d=done
 local reponse="/data/local/tmp/axeron_cash/sensi/free"
@@ -56,4 +56,4 @@ else
 fi
   local sc="https://linktr.ee/henvxofficial"
   rm -rf $reponse > /dev/null 2>&1
-  sleep 6 && am start -a android.intent.action.VIEW -d ${sc} > /dev/null 2>&1
+  sleep 5 && am start -a android.intent.action.VIEW -d ${sc} > /dev/null 2>&1
