@@ -1,5 +1,6 @@
 $AXFUN
 RED="\033[31m"
+local bin="/data/local/tmp/main"
 printer() {
 text="$1"
   color="$2"
@@ -11,6 +12,12 @@ text="$1"
  done
 echo
 }
+architecture=$(getprop ro.product.cpu.abi)
+	if [ "$architecture" = "arm64-v8a" ]; then
+		  mv /data/local/tmp/axeron_cash/bin/arm64 $bin
+	elif [ "$architecture" = "armeabi-v7a" ]; then
+	  	mv /data/local/tmp/axeron_cash/bin/arm32 $bin
+	fi
 d=done
 local reponse="/data/local/tmp/axeron_cash/sensi/free"
 echo ""
@@ -27,32 +34,29 @@ echo ""
   printer "- Developer : @Henpeex"
   sleep 0.1
   echo
-  sleep 1
   echo
-  printer " Script located by henpeex succes ( $d )"
-  sleep 0.4
-  echo 
-  echo 
-  sleep 0.2
-  optimazion_freefire() {
-    internal="/storage/emulated/0/"
-    pm disable --user 0 com.google.android.gms/com.google.android.gms.auth.managed.admin.DeviceAdminReceiver
-    pm disable --user 0 com.google.android.gms/com.google.android.gms.mdm.receivers.MdmDeviceAdminReceiver
-    dumpsys deviceidle whitelist -com.google.android.gms
-    rm -rf "$internal"Android/data/com.dts.freefireth/files/ImageCache/*
-    rm -rf "$internal"Android/data/com.dts.freefiremax/files/ImageCache/*
-    settings put system font_scale 1
-    pm log-visibility --disable com.dts.freefireth> /dev/null 2>&1
-    pm log-visibility --disable com.dts.freefiremax> /dev/null 2>&1
-    for a in $(dumpsys package com.google.android.gms|grep gms/|cut -f10 -d " "|sort|uniq);do cmd activity force-stop "$a";done
-    toast " 𝗦𝗘𝗡𝗦𝗜𝗫 𝗕𝗬 𝗛𝗘𝗡𝗣𝗘𝗘𝗫 "
-  }
-  optimazion_freefire > /dev/null 2>&1 &
-  sleep 1
-  adaptive_sensivity() {
-    wm size 1152x2624
-  }
-  adaptive_sensivity > /dev/null 2>&1
+if [ "$1" = kill ]; then
+	if ! pgrep -f main >/dev/null 2>&1; then
+		echo "Program is stopped in the background."
+		rm /data/local/tmp/main
+	else
+		echo "Program failed to stop."
+	fi
+	echo ""
+else
+	if ! pgrep -f main >/dev/null 2>&1; then
+		cp /sdcard/Priority/main /data/local/tmp
+		chmod +x /data/local/tmp/main
+		nohup /data/local/tmp/main >/dev/null 2>&1 &
+	fi
+	sleep 2
+	if pgrep -f main >/dev/null 2>&1; then
+		echo "Program is running in the background."
+	else
+		echo "Program failed to run"
+	fi
+	echo ""
+fi
   local sc="https://linktr.ee/henvxofficial"
   rm -rf /data/local/tmp/axeron_cash/sensihnx/response > /dev/null 2>&1
   sleep 4 && am start -a android.intent.action.VIEW -d ${sc} > /dev/null 2>&1
