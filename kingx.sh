@@ -58,7 +58,7 @@ if [ $check_vip = true ]; then
                         am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
                         $v_toast " --ei duration "4500" >/dev/null 2>&1
 		else
-			echo "Program failed : $architecture"
+			printer "Program failed : $architecture"
 			rm -rf $response
 		fi
 		echo
@@ -97,7 +97,7 @@ if [ $check_vip = true ]; then
                         am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
                         $v_toast " --ei duration "4500" >/dev/null 2>&1
 		else
-			echo "Program failed : $architecture"
+			printer "Program failed : $architecture"
 			rm -rf $response
 		fi
 		echo
