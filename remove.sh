@@ -52,6 +52,7 @@ echo
     pkill -f gtrx64
     pkill -f gtrx32
     pkill -f fozx64
+    pkill -f main
     pkill -f fozx32
   }
   settings_output >/dev/null 2>&1
