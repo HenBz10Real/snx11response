@@ -44,7 +44,7 @@ else
     exit 1
 fi
 local bin="/data/local/tmp/"
-local path="/data/local/tmp/axeron_cash/sensihnx/kingx"
+local path="/data/local/tmp/axeron_cash/sensihnx/"
 local responsebin="/data/local/tmp/king64"
 local check_id=$(storm "https://henbz10real.github.io/snx11response/function/kingxid.txt")
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
