@@ -19,8 +19,26 @@ linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/gtrx"
 responsebin="/data/local/tmp/gtrx64"
 architecture=$(getprop ro.product.cpu.abi)
+android_version=$(getprop ro.build.version.release)
+if [[ $android_version == 14* ]]; then
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/gatrox.sh"
+elif [[ $android_version == 13* ]]; then
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/gatrox.sh"
+elif [[ $android_version == 12* ]]; then
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/gatrox.sh"
+elif [[ $android_version == 11* ]]; then
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/gatrox.sh"
+elif [[ $android_version == 10* ]]; then
+    url=""
+elif [[ $android_version == 9* ]]; then
+    url=""
+elif [[ $android_version == 8* ]]; then
+    url=""
+else
+    echo "Versi Android tidak didukung."
+    exit 1
+fi
 local bin="/data/local/tmp/"
-local url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/gatrox.sh"
 local check_id=$(storm "https://henbz10real.github.io/snx11response/function/gatroxid.txt")
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
 if [ $check_vip = true ]; then
