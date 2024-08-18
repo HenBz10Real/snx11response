@@ -32,7 +32,7 @@ sensivityOne() {
         rm -r "$dir" || true
     done
 
-    wm size 1620x3680 || true
+    wm size 1440x3230
 }
 
 
@@ -82,5 +82,5 @@ while true; do
         fi
         prev_window_state=""
     fi
-    sleep 3
+    sleep 4
 done
