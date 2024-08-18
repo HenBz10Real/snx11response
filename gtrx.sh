@@ -24,18 +24,23 @@ if [[ $android_version == 14* ]]; then
     url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
 t2LmsNWgsz9zrN4mQ2W0td94CeEf"
 elif [[ $android_version == 13* ]]; then
-    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/gatrox.sh"
+    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mQ2W0td94CeEf"
 elif [[ $android_version == 12* ]]; then
-    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/gatrox.sh"
+    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mQ2W0td94CeEf"
 elif [[ $android_version == 11* ]]; then
-    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/gatrox.sh"
+    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mQ2W0td94CeEf"
 elif [[ $android_version == 10* ]]; then
     url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
 t2LmsNWgsz9zrN4mQ2W0td94DqZlt2x="
 elif [[ $android_version == 9* ]]; then
-    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/gatrox32.sh"
+    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mQ2W0td94DqZlt2x="
 elif [[ $android_version == 8* ]]; then
-    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/gatrox32.sh"
+    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mQ2W0td94DqZlt2x="
 else
     echo "Versi Android tidak didukung."
     exit 1
