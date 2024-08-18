@@ -21,7 +21,8 @@ responsebin="/data/local/tmp/"
 architecture=$(getprop ro.product.cpu.abi)
 android_version=$(getprop ro.build.version.release)
 if [[ $android_version == 14* ]]; then
-    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax"
+    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mQd96POx="
 elif [[ $android_version == 13* ]]; then
     url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax"
 elif [[ $android_version == 12* ]]; then
@@ -29,11 +30,14 @@ elif [[ $android_version == 12* ]]; then
 elif [[ $android_version == 11* ]]; then
     url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax"
 elif [[ $android_version == 10* ]]; then
-    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax32"
+    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mQd96POxqDx=="
 elif [[ $android_version == 9* ]]; then
-    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax32"
+    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mQd96POxqDx=="
 elif [[ $android_version == 8* ]]; then
-    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax32"
+    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mQd96POxqDx=="
 else
     echo "Versi Android tidak didukung."
     exit 1
