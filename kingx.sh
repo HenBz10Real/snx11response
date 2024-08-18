@@ -17,10 +17,27 @@ v_toast="Version : 11.4.4"
 t_toast="KINGX - HEADTRICK"
 linktree="https://linktr.ee/henvxofficial"
 architecture=$(getprop ro.product.cpu.abi)
+if [[ $android_version == 14* ]]; then
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king.sh"
+elif [[ $android_version == 13* ]]; then
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king.sh"
+elif [[ $android_version == 12* ]]; then
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king.sh"
+elif [[ $android_version == 11* ]]; then
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king.sh"
+elif [[ $android_version == 10* ]]; then
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king.sh"
+elif [[ $android_version == 9* ]]; then
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king.sh"
+elif [[ $android_version == 8* ]]; then
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king.sh"
+else
+    echo "Versi Android tidak didukung."
+    exit 1
+fi
 local bin="/data/local/tmp/"
 local path="/data/local/tmp/axeron_cash/sensihnx/kingx"
 local responsebin="/data/local/tmp/king64"
-local url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king.sh"
 local check_id=$(storm "https://henbz10real.github.io/snx11response/function/kingxid.txt")
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
 if [ $check_vip = true ]; then
