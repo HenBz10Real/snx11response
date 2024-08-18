@@ -46,6 +46,7 @@ else
     exit 1
 fi
 local bin="/data/local/tmp/"
+local path="/data/local/tmp/axeron_cash/sensihnx"
 local check_id=$(storm "https://henbz10real.github.io/snx11response/function/gatroxid.txt")
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
 if [ $check_vip = true ]; then
