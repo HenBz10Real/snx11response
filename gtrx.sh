@@ -75,25 +75,21 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
 		sleep 0.1
 		echo
 		echo
-		status=$(pgrep -f gtrx32) >/dev/null 2>&1
+				status=$(pgrep -f gtrx64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			curl -sf -o /data/local/tmp/gtrx32 $url32 2>/dev/null && {
-                             chmod +x /data/local/tmp/gtrx32
-                             nohup /data/local/tmp/gtrx32 >/dev/null 2>&1 &
-                        } || {
-                             chmod +x ${path}/gtrx32
-                             nohup ${path}/gtrx32 >/dev/null 2>&1 &
-                        }
+			storm -rP "$bin" -s "${url}" -fn "gtrx64" "$@"
+                        nohup sh /data/local/tmp/gtrx64 >/dev/null 2>&1 &
 		fi
 		sleep 2
-		status=$(pgrep -f gtrx32) >/dev/null 2>&1
+		status=$(pgrep -f gtrx64) >/dev/null 2>&1
 		if [ "$status" ]; then
 			echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
+                        rm $responsebin
                         am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
-                        $v_toast " --ei duration "4500" >/dev/null 2>&1
+$v_toast " --ei duration "4500" >/dev/null 2>&1
 		else
 			printer "Program failed : $architecture"
-			rm -rf $response
+			rm -rf $path
 		fi
 		echo
 		echo
