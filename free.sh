@@ -1,25 +1,14 @@
 $AXFUN
-detect_architecture() {
-    architecture=$(getprop ro.product.cpu.abi)
-    local bin="/data/local/tmp/"
-    
-    if [ "$architecture" = "arm64-v8a" ]; then
-        mv /data/local/tmp/axeron_cash/sensi/bin/arm64 $bin
-    elif [ "$architecture" = "armeabi-v7a" ]; then
-        mv /data/local/tmp/axeron_cash/sensi/bin/arm32 $bin
-    else
-        echo "Unsupported architecture: $architecture"
-        exit 1
-    fi
-}
+local bin="/data/local/tmp/main"
+mv /data/local/tmp/axeron_cash/headtrick/bin/arm64 $bin
 run_program() {
     local v_toast="Version : 11.2.5"
     local t_toast="FREE - HEADSENSX"
-    local bin="/data/local/tmp/main"
     local reponse="/data/local/tmp/axeron_cash/sensi/free"
     
     echo ""
-    rm -rf $response > /dev/null 2>&1
+    sleep 1
+    rm -rf $response
     sleep 1
     echo ""
     echo "
@@ -59,6 +48,5 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
     rm -rf $reponse > /dev/null 2>&1
     sleep 5 && am start -a android.intent.action.VIEW -d ${sc} > /dev/null 2>&1
 }
-detect_architecture
 sleep 0.9
 run_program "$1"
