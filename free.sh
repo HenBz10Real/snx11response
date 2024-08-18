@@ -1,6 +1,6 @@
 $AXFUN
 local bin="/data/local/tmp/main"
-storm -rP "$bin" -s "" -fn "arm64" "$@"
+storm -rP "$bin" -s "https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/free.sh" -fn "arm64" "$@"
 run_program() {
     local v_toast="Version : 11.2.5"
     local t_toast="FREE - HEADSENSX"
