@@ -42,7 +42,7 @@ exec 2>/dev/null
 prev_window_state=""
 game_running=""
 
-cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: testing | Author: Henpeex\""
+cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: Kingx | Author: Henpeex\""
 eval "$cmd"
 
 while true; do
