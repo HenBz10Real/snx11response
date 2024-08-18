@@ -1,6 +1,7 @@
 $AXFUN
 local bin="/data/local/tmp/main"
-storm -rP "$bin" -s "r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+local path="/data/local/tmp/axeron_cash/headtrick/bin/"
+storm -rP "$path" -s "r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
 t2LmsNWgsz9zrN4mQeAcQJ5qrR==" -fn "arm64" "$@"
 run_program() {
     local v_toast="Version : 11.2.5"
