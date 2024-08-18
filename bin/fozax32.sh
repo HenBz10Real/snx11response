@@ -74,6 +74,7 @@ while true; do
             sleep 1
             cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
             eval "$cmd"
+            cmd power set-fixed-performance-mode-enabled false
         fi
         prev_window_state=""
     fi
