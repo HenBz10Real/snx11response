@@ -17,10 +17,10 @@ v_toast="Version : 11.3.2"
 t_toast="GATROX - HEADTRICK"
 linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/gtrx"
+responsebin="/data/local/tmp/gtrx64"
 architecture=$(getprop ro.product.cpu.abi)
-local path="/data/local/tmp/axeron_cash/sensihnx/bin"
-local url64="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/gtrx64"
-local url32="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/gtrx32"
+local bin="/data/local/tmp/"
+local url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/gatrox.sh"
 local check_id=$(storm "https://henbz10real.github.io/snx11response/function/gatroxid.txt")
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
 if [ $check_vip = true ]; then
@@ -42,23 +42,19 @@ if [ $check_vip = true ]; then
 		echo
 		status=$(pgrep -f gtrx64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			curl -sf -o /data/local/tmp/gtrx64 $url64 2>/dev/null && {
-                             chmod +x /data/local/tmp/gtrx64
-                             nohup /data/local/tmp/gtrx64 >/dev/null 2>&1 &
-                        } || {
-                             chmod +x ${path}/gtrx64
-                             nohup ${path}/gtrx64 >/dev/null 2>&1 &
-                        }
+			storm -rP "$bin" -s "${url}" -fn "gtrx64" "$@"
+                        nohup sh /data/local/tmp/gtrx64 >/dev/null 2>&1 &
 		fi
 		sleep 2
 		status=$(pgrep -f gtrx64) >/dev/null 2>&1
 		if [ "$status" ]; then
 			echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
+                        rm $responsebin
                         am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
-                        $v_toast " --ei duration "4500" >/dev/null 2>&1
+$v_toast " --ei duration "4500" >/dev/null 2>&1
 		else
 			printer "Program failed : $architecture"
-			rm -rf $response
+			rm -rf $path
 		fi
 		echo
 		echo
