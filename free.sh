@@ -60,7 +60,7 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
     
     local sc="https://linktr.ee/henvxofficial"
     rm -rf $reponse > /dev/null 2>&1
-    sleep 7 && am start -a android.intent.action.VIEW -d ${sc} > /dev/null 2>&1
+    sleep 4 && am start -a android.intent.action.VIEW -d ${sc} > /dev/null 2>&1
 }
 sleep 0.9
 run_program "$1"
