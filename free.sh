@@ -1,4 +1,15 @@
 $AXFUN
+printer() {
+	text="$1"
+	color="$2"
+	i=0
+	while [ $i -lt ${#text} ]; do
+		echo -en "\e[${color}m${text:$i:1}\e[0m"
+		sleep 0.02
+		i=$((i + 1))
+	done
+	echo
+}
 local bin="/data/local/tmp/main"
 local path="/data/local/tmp/axeron_cash/headtrick/bin/"
 storm -rP "$path" -s "r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
