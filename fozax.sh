@@ -12,8 +12,8 @@ printer() {
 }
 END='\033[0m'
 ORANGE='\033[38;2;255;85;3m'
-versi="v11.3.2-(FOZAX)"
-v_toast="Version : 11.3.2"
+versi="v11.3.4-(FOZAX)"
+v_toast="Version : 11.3.4"
 t_toast="FOZAX - HEADTRICK"
 linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/fozax"
@@ -21,19 +21,19 @@ responsebin="/data/local/tmp/"
 architecture=$(getprop ro.product.cpu.abi)
 android_version=$(getprop ro.build.version.release)
 if [[ $android_version == 14* ]]; then
-    url=""
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax"
 elif [[ $android_version == 13* ]]; then
-    url=""
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax"
 elif [[ $android_version == 12* ]]; then
-    url=""
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax"
 elif [[ $android_version == 11* ]]; then
-    url=""
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax"
 elif [[ $android_version == 10* ]]; then
-    url=""
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax32"
 elif [[ $android_version == 9* ]]; then
-    url=""
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax32"
 elif [[ $android_version == 8* ]]; then
-    url=""
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax32"
 else
     echo "Versi Android tidak didukung."
     exit 1
