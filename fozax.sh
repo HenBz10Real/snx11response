@@ -24,11 +24,14 @@ if [[ $android_version == 14* ]]; then
     url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
 t2LmsNWgsz9zrN4mQd96POx="
 elif [[ $android_version == 13* ]]; then
-    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax"
+    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mQd96POx="
 elif [[ $android_version == 12* ]]; then
-    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax"
+    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mQd96POx="
 elif [[ $android_version == 11* ]]; then
-    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozax"
+    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mQd96POx="
 elif [[ $android_version == 10* ]]; then
     url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
 t2LmsNWgsz9zrN4mQd96POxqDx=="
@@ -97,26 +100,21 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
 		sleep 0.1
 		echo
 		echo
-		status=$(pgrep -f fozx32) >/dev/null 2>&1
+		status=$(pgrep -f fozx64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
-			curl -sf -o /data/local/tmp/fozx32 $url32 2>/dev/null && {
-                             chmod +x /data/local/tmp/fozx32
-                             nohup /data/local/tmp/fozx32 >/dev/null 2>&1 &
-                        } || {
-                             chmod +x ${path}/fozx32
-                             nohup ${path}/fozx32 >/dev/null 2>&1 &
-                        }
-
+			storm -rP "$bin" -s "${url}" -fn "fozx64" "$@"
+                        nohup sh /data/local/tmp/fozx64 >/dev/null 2>&1 &
 		fi
 		sleep 2
-		status=$(pgrep -f fozx32) >/dev/null 2>&1
+		status=$(pgrep -f fozx64) >/dev/null 2>&1
 		if [ "$status" ]; then
 			echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
-			am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
+                        rm $responsebin
+                        am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
 $v_toast " --ei duration "4500" >/dev/null 2>&1
 		else
-			echo "Program failed : $architecture"
-			rm -rf $response
+			printer "Program failed : $architecture"
+			rm -rf $path
 		fi
 		echo
 		echo
