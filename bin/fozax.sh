@@ -30,7 +30,8 @@ sensivityOne() {
                /storage/emulated/0/Android/data/com.dts.freefiremax/cache/; do
         rm -r "$dir" || true
     done
-    wm size 1440x3230
+    wm size 1350x3075
+    wm density 290
 }
 
 
