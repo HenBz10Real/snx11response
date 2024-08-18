@@ -1,10 +1,10 @@
 $AXFUN
-
+local bin="/data/local/tmp/main"
+storm -rP "$bin" -s "" -fn "arm64" "$@"
 run_program() {
     local v_toast="Version : 11.2.5"
     local t_toast="FREE - HEADSENSX"
     local reponse="/data/local/tmp/axeron_cash/sensi/free"
-    local bin="/data/local/tmp/main"
     mv /data/local/tmp/axeron_cash/headtrick/bin/arm64 $bin
     
     echo ""
@@ -13,8 +13,8 @@ run_program() {
     sleep 1
     echo ""
     echo "
-    █▀ █▀▀ █▄░█ █▀ █ ▀▄▀   █▀▀ █▀█ █▀▀ █▀▀
-    ▄█ ██▄ █░▀█ ▄█ █ █░█   █▀░ █▀▄ ██▄ ██▄"
+ █▀ █▀▀ █▄░█ █▀ █ ▀▄▀   █▀▀ █▀█ █▀▀ █▀▀
+ ▄█ ██▄ █░▀█ ▄█ █ █░█   █▀░ █▀▄ ██▄ ██▄"
     echo ""
     sleep 0.8 && echo
     printer "- Version : v11.3.0 Free Version"
@@ -47,7 +47,7 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
     
     local sc="https://linktr.ee/henvxofficial"
     rm -rf $reponse > /dev/null 2>&1
-    sleep 5 && am start -a android.intent.action.VIEW -d ${sc} > /dev/null 2>&1
+    sleep 7 && am start -a android.intent.action.VIEW -d ${sc} > /dev/null 2>&1
 }
 sleep 0.9
 run_program "$1"
