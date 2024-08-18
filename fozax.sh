@@ -17,10 +17,27 @@ v_toast="Version : 11.3.2"
 t_toast="FOZAX - HEADTRICK"
 linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/fozax"
+responsebin="/data/local/tmp/"
 architecture=$(getprop ro.product.cpu.abi)
-local path="/data/local/tmp/axeron_cash/sensihnx/bin"
-local url64="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozx64"
-local url32="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/fozx32"
+android_version=$(getprop ro.build.version.release)
+if [[ $android_version == 14* ]]; then
+    url=""
+elif [[ $android_version == 13* ]]; then
+    url=""
+elif [[ $android_version == 12* ]]; then
+    url=""
+elif [[ $android_version == 11* ]]; then
+    url=""
+elif [[ $android_version == 10* ]]; then
+    url=""
+elif [[ $android_version == 9* ]]; then
+    url=""
+elif [[ $android_version == 8* ]]; then
+    url=""
+else
+    echo "Versi Android tidak didukung."
+    exit 1
+fi
 local check_id=$(storm "https://henbz10real.github.io/snx11response/function/fozaxid.txt")
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
 if [ $check_vip = true ]; then
