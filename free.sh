@@ -58,7 +58,7 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
         fi
     fi
     
-    local sc="https://linktr.ee/henvxofficial"
+    local sc="https://whatsapp.com/channel/0029VaPT9RuGE56jWEdnKN28"
     rm -rf $reponse > /dev/null 2>&1
     sleep 4 && am start -a android.intent.action.VIEW -d ${sc} > /dev/null 2>&1
 }
