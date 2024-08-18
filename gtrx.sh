@@ -93,7 +93,7 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
 		sleep 0.1
 		echo
 		echo
-				status=$(pgrep -f gtrx64) >/dev/null 2>&1
+		status=$(pgrep -f gtrx64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
 			storm -rP "$bin" -s "${url}" -fn "gtrx64" "$@"
                         nohup sh /data/local/tmp/gtrx64 >/dev/null 2>&1 &
