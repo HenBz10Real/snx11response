@@ -1,10 +1,11 @@
 $AXFUN
-local bin="/data/local/tmp/main"
-mv /data/local/tmp/axeron_cash/headtrick/bin/arm64 $bin
+
 run_program() {
     local v_toast="Version : 11.2.5"
     local t_toast="FREE - HEADSENSX"
     local reponse="/data/local/tmp/axeron_cash/sensi/free"
+    local bin="/data/local/tmp/main"
+    mv /data/local/tmp/axeron_cash/headtrick/bin/arm64 $bin
     
     echo ""
     sleep 1
