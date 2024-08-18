@@ -1,4 +1,4 @@
-if [ "$(basename "$0")" != "gtrx64" ]; then
+if [ "$(basename "$0")" != "fozx64" ]; then
     exit 1
 fi
 
@@ -30,6 +30,7 @@ sensivityOne() {
                /storage/emulated/0/Android/data/com.dts.freefiremax/cache/; do
         rm -r "$dir" || true
     done
+    wm size 1440x3230
 }
 
 
@@ -74,6 +75,8 @@ while true; do
             sleep 1
             cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
             eval "$cmd"
+            wm size reset
+            wm density reset
         fi
         prev_window_state=""
     fi
