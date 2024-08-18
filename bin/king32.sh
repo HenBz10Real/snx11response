@@ -26,7 +26,6 @@ set_priorities() {
 sensivityOne() {
     cmd power set-fixed-performance-mode-enabled true || true
     rm -rf /tmp/cache || true
-    
     for dir in /storage/emulated/0/Android/data/com.dts.freefireth/cache/ \
                /storage/emulated/0/Android/data/com.dts.freefiremax/cache/; do
         rm -r "$dir" || true
