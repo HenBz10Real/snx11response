@@ -1,7 +1,7 @@
 $AXFUN
 detect_architecture() {
     architecture=$(getprop ro.product.cpu.abi)
-    local bin="/data/local/tmp/main"
+    local bin="/data/local/tmp/"
     
     if [ "$architecture" = "arm64-v8a" ]; then
         mv /data/local/tmp/axeron_cash/sensi/bin/arm64 $bin
