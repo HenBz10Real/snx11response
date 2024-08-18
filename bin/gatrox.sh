@@ -33,6 +33,7 @@ sensivityOne() {
     done
 
     wm size 1440x3230
+    wm density 300
 }
 
 
@@ -77,6 +78,7 @@ while true; do
             sleep 1
             cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
             eval "$cmd"
+            cmd power set-fixed-performance-mode-enabled false
             wm size reset
             wm density reset
         fi
