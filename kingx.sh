@@ -17,6 +17,7 @@ v_toast="Version : 11.4.4"
 t_toast="KINGX - HEADTRICK"
 linktree="https://linktr.ee/henvxofficial"
 architecture=$(getprop ro.product.cpu.abi)
+android_version=$(getprop ro.build.version.release)
 if [[ $android_version == 14* ]]; then
     url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king.sh"
 elif [[ $android_version == 13* ]]; then
