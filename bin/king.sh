@@ -74,7 +74,7 @@ while true; do
     else
         if [ "$game_running" = "open" ]; then
             game_running=""
-            sleep 1
+            sleep 3
             cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
             eval "$cmd"
             cmd power set-fixed-performance-mode-enabled false
@@ -83,5 +83,5 @@ while true; do
         fi
         prev_window_state=""
     fi
-    sleep 3
+    sleep 5
 done
