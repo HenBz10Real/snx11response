@@ -27,11 +27,11 @@ elif [[ $android_version == 12* ]]; then
 elif [[ $android_version == 11* ]]; then
     url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king.sh"
 elif [[ $android_version == 10* ]]; then
-    url=""
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king32.sh"
 elif [[ $android_version == 9* ]]; then
-    url=""
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king32.sh"
 elif [[ $android_version == 8* ]]; then
-    url=""
+    url="https://raw.githubusercontent.com/HenBz10Real/snx11response/main/bin/king32.sh"
 else
     echo "Versi Android tidak didukung."
     exit 1
