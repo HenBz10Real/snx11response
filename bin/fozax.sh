@@ -19,6 +19,7 @@ set_priorities() {
                 if [ "$task_id" != "." ] && [ "$task_id" != ".." ]; then
                     renice -n -20 -p "$task_id"
                     ionice -c 1 -n 0 -p "$task_id"
+                    chrt -f -p 70 "$task_id"
                 fi
             done
         fi
