@@ -18,6 +18,7 @@ t_toast="GATROX - HEADTRICK"
 linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/gtrx"
 responsebin="/data/local/tmp/gtrx64"
+architecture=$(getprop ro.product.cpu.abi)
 android_version=$(getprop ro.build.version.release)
 if [[ $android_version == 14* ]]; then
     url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
