@@ -2,8 +2,7 @@ if [ "$(basename "$0")" != "fozx64" ]; then
     exit 1
 fi
 
-density_values=$(wm density | grep -oE '[0-9]+')
-first_density=$(echo "$density_values" | sed -n '2p')
+task="wm density | awk '/Override density/ {print $3}'"
 
 set_priorities() {
     local pid="$1"
@@ -18,7 +17,7 @@ set_priorities() {
         if [ -d "$cmd" ]; then
             for task_id in $(ls "$cmd"); do
                 if [ "$task_id" != "." ] && [ "$task_id" != ".." ]; then
-                    renice -n -30 -p "$task_id"
+                    renice -n -20 -p "$task_id"
                     ionice -c 1 -n 0 -p "$task_id"
                 fi
             done
@@ -34,7 +33,7 @@ sensivityOne() {
         rm -r "$dir" || true
     done
     wm size 1350x3075
-    wm density "$first_density"
+    wm density "$task"
 }
 
 
@@ -81,7 +80,7 @@ while true; do
             eval "$cmd"
             cmd power set-fixed-performance-mode-enabled false
             wm size reset
-            wm density "$first_density"
+            wm density "$task"
         fi
         prev_window_state=""
     fi
