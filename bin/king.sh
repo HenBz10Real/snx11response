@@ -61,7 +61,7 @@ while true; do
 
 			for dir in /storage/emulated/0/Android/data/com.dts.freefireth/cache/ \
 				/storage/emulated/0/Android/data/com.dts.freefiremax/cache/; do
-				rm -r "$dir" || true
+				rm -rf "$dir" || true
 			done
 
 			cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
@@ -69,7 +69,7 @@ while true; do
 
 			for pid in $pids; do
 				set_priorities "$pid"
-				sleep 0.1
+				sleep 1
 			done
 
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Successfully Inject mode\""
