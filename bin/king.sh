@@ -2,7 +2,7 @@ if [ "$(basename "$0")" != "king64" ]; then
 	exit 1
 fi
 
-task="wm density | awk '/Override density/ {print $3}'"
+./data/local/tmp/axeron_cash/sensihnx/king
 
 set_priorities() {
 	local pid="$1"
