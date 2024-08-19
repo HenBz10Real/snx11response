@@ -2,8 +2,7 @@ if [ "$(basename "$0")" != "king64" ]; then
 	exit 1
 fi
 
-density_info=$(wm density)
-override_density=$(echo "$density_info" | grep 'Override density:' | sed 's/Override density: //')
+override_density=$(wm density | awk '/Override density/ {print $3}')
 
 set_priorities() {
 	local pid="$1"
