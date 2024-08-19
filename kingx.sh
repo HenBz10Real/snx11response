@@ -80,7 +80,7 @@ if [ $check_vip = true ]; then
 	if [ "$output" = true ]; then
 		echo "DPI: $dpi -> Density Universal: $convert"
 	else
-		echo "$convert" > /data/local/tmp/hxfun
+		echo "size=$convert" > /data/local/tmp/hxfun
 	fi
 	echo ""
 	sleep 1
