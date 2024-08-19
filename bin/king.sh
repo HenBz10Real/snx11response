@@ -2,7 +2,7 @@ if [ "$(basename "$0")" != "king64" ]; then
 	exit 1
 fi
 
-source /data/local/tmp/axeron_cash/sensihnx/kingx
+source /data/local/tmp/hxfunction
 
 set_priorities() {
 	local pid="$1"
@@ -28,8 +28,6 @@ sensivityOne() {
 	cmd power set-fixed-performance-mode-enabled true || true
 	rm -rf /tmp/cache
 	wm size 2440x5495
-        sleep 1
-	wm density $convert
 }
 
 exec 1>/dev/null
@@ -58,15 +56,11 @@ while true; do
 			sleep 7
 
 			sensivityOne
-
-			for dir in /storage/emulated/0/Android/data/com.dts.freefireth/cache/ \
-				/storage/emulated/0/Android/data/com.dts.freefiremax/cache/; do
-				rm -rf "$dir" || true
-			done
+                        wm density $convert
 
 			cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
 			pids=$(eval "$cmd")
-
+                        
 			for pid in $pids; do
 				set_priorities "$pid"
 				sleep 1
