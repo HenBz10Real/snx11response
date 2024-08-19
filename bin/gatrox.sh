@@ -2,8 +2,7 @@ if [ "$(basename "$0")" != "gtrx64" ]; then
     exit 1
 fi
 
-density_values=$(wm density | grep -oE '[0-9]+')
-first_density=$(echo "$density_values" | sed -n '2p')
+task="wm density | awk '/Override density/ {print $3}'"
 
 set_priorities() {
     local pid="$1"
@@ -30,7 +29,7 @@ sensivityOne() {
     cmd power set-fixed-performance-mode-enabled true || true
     rm -rf /tmp/cache || true
     wm size 1445x3238
-    wm density "$first_density"
+    wm density "$task"
 }
 
 
@@ -82,7 +81,7 @@ while true; do
             eval "$cmd"
             cmd power set-fixed-performance-mode-enabled false
             wm size reset
-            wm density "$first_density"
+            wm density "$task"
         fi
         prev_window_state=""
     fi
