@@ -41,7 +41,7 @@ run_program() {
     printer "- Developer : @Henpeex"
     sleep 0.1
     echo
-    echo " POV : punya kontol ngaceng dan kecil >> 𓂸𓂸 "
+    echo
     echo
     
     if [ "$1" = "kill" ]; then
