@@ -33,6 +33,7 @@ sensivityOne() {
     done
 
     wm size 1620x3680 || true
+    wm density 355
 }
 
 
