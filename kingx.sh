@@ -16,6 +16,7 @@ versi="v11.4.8-(KINGX)"
 v_toast="Version : 11.4.8"
 t_toast="KINGX - HEADTRICK"
 linktree="https://linktr.ee/henvxofficial"
+architecture=$(getprop ro.product.cpu.abi)
 android_version=$(getprop ro.build.version.release)
 if [[ $android_version == 14* ]]; then
     url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
