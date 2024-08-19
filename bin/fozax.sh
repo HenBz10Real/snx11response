@@ -28,12 +28,9 @@ set_priorities() {
 
 sensivityOne() {
     cmd power set-fixed-performance-mode-enabled true || true
-    rm -rf /tmp/cache || true
-    for dir in /storage/emulated/0/Android/data/com.dts.freefireth/cache/ \
-               /storage/emulated/0/Android/data/com.dts.freefiremax/cache/; do
-        rm -r "$dir" || true
-    done
+    rm -rf /tmp/cache
     wm size 1350x3075
+    sleep 1
     wm density "$task"
 }
 
@@ -57,7 +54,7 @@ while true; do
             game_running="open"
             cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
             eval "$cmd"
-            sleep 3
+            sleep 6
             
             sensivityOne
 
