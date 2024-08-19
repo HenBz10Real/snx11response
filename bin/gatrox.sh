@@ -30,6 +30,7 @@ sensivityOne() {
     cmd power set-fixed-performance-mode-enabled true || true
     rm -rf /tmp/cache || true
     wm size 1445x3238
+    sleep 1
     wm density "$task"
 }
 
@@ -53,7 +54,7 @@ while true; do
             game_running="open"
             cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
             eval "$cmd"
-            sleep 11
+            sleep 7
             
             sensivityOne
 
