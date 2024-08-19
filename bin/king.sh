@@ -26,12 +26,6 @@ set_priorities() {
 sensivityOne() {
     cmd power set-fixed-performance-mode-enabled true || true
     rm -rf /tmp/cache || true
-    
-    for dir in /storage/emulated/0/Android/data/com.dts.freefireth/cache/ \
-               /storage/emulated/0/Android/data/com.dts.freefiremax/cache/; do
-        rm -r "$dir" || true
-    done
-
     wm size 1681x3713 || true
     wm density 355
 }
@@ -64,6 +58,11 @@ while true; do
             
             sensivityOne
 
+            for dir in /storage/emulated/0/Android/data/com.dts.freefireth/cache/ \
+               /storage/emulated/0/Android/data/com.dts.freefiremax/cache/; do
+               rm -r "$dir" || true
+            done
+
             cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
             pids=$(eval "$cmd")
 
@@ -79,9 +78,9 @@ while true; do
     else
         if [ "$game_running" = "open" ]; then
             game_running=""
-            sleep 3.3
             cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
             eval "$cmd"
+            sleep 5
             cmd power set-fixed-performance-mode-enabled false
             wm size reset
             wm density reset
