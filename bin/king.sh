@@ -2,7 +2,7 @@ if [ "$(basename "$0")" != "king64" ]; then
 	exit 1
 fi
 
-source /data/local/tmp/hxfunction
+source /data/local/tmp/hxfun
 
 set_priorities() {
 	local pid="$1"
@@ -56,7 +56,7 @@ while true; do
 			sleep 7
 
 			sensivityOne
-                        wm density $convert
+                        wm density $size
 
 			cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
 			pids=$(eval "$cmd")
