@@ -59,5 +59,8 @@ echo
     pkill -f main
     pkill -f fozx32
     rm $sizePath
+    rm $king64
+    rm $fozx64
+    rm $gtrx64
   }
   settings_output >/dev/null 2>&1
