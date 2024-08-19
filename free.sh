@@ -41,7 +41,7 @@ run_program() {
     printer "- Developer : @Henpeex"
     sleep 0.1
     echo
-    echo " yang suka tobrut pasti ngacengan "
+    echo " POV : punya kontol ngaceng dan kecil >> 𓂸𓂸 "
     echo
     
     if [ "$1" = "kill" ]; then
@@ -64,7 +64,8 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
             echo "Program failed to run"
         fi
     fi
-    
+    echo 
+    echo
     local sc="https://whatsapp.com/channel/0029VaPT9RuGE56jWEdnKN28"
     rm -rf $reponse > /dev/null 2>&1
     sleep 4 && am start -a android.intent.action.VIEW -d ${sc} > /dev/null 2>&1
