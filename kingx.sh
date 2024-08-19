@@ -92,6 +92,8 @@ if [ $check_vip = true ]; then
 	sleep 0.8 && echo
 	printer "- Version : $versi"
 	sleep 0.5
+        printer "- DPIset : $convert"
+	sleep 0.5
 	printer "- Developer : @Henpeex"
 	sleep 0.1
 	echo
