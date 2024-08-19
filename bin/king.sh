@@ -29,7 +29,7 @@ sensivityOne() {
 	rm -rf /tmp/cache
 	wm size 2440x5495
         sleep 1
-	wm density "$dxpi"
+	wm density $convert
 }
 
 exec 1>/dev/null
