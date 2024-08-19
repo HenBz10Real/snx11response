@@ -11,6 +11,7 @@ text="$1"
 echo
 }
   END='\033[0m'
+  local sizePath="/data/local/tmp/hxfun"
   ORANGE='\033[38;2;255;85;3m'
   sleep 1 && rm -rf /data/local/tmp/axeron_cash/sensihnx/
   echo ""
@@ -54,12 +55,6 @@ echo
     pkill -f fozx64
     pkill -f main
     pkill -f fozx32
+    rm $sizePath
   }
   settings_output >/dev/null 2>&1
-  
-  adaptive_sensivity() {
-    wm size reset
-    wm density reset
-    cmd notification post -S bigtext -t 'SENSIHNX' 'Tag' 'Remove Berhasil ( jika mau main lagi silahkan aktifin sensix terlebih dahulu )'
-  }
-  adaptive_sensivity >/dev/null 2>&1
