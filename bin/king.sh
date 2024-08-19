@@ -2,8 +2,7 @@ if [ "$(basename "$0")" != "king64" ]; then
 	exit 1
 fi
 
-density_values=$(wm density | grep -oE '[0-9]+')
-first_density=$(echo "$density_values" | sed -n '2p')
+task="wm density | awk '/Override density/ {print $3}'"
 
 set_priorities() {
 	local pid="$1"
@@ -29,7 +28,7 @@ sensivityOne() {
 	rm -rf /tmp/cache
 	wm size 2440x5495
         sleep 0.3
-	wm density "$first_density"
+	wm density "$task"
 }
 
 exec 1>/dev/null
@@ -84,7 +83,7 @@ while true; do
 			sleep 5
 			cmd power set-fixed-performance-mode-enabled false
 			wm size reset
-			wm density "$override_density"
+			wm density "$task"
 		fi
 		prev_window_state=""
 	fi
