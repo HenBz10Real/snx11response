@@ -80,7 +80,7 @@ if [ $check_vip = true ]; then
 	if [ "$output" = true ]; then
 		echo "DPI: $dpi -> Density Universal: $convert"
 	else
-		dxpi="$convert"
+		dxpi="echo "$convert""
 	fi
 	echo ""
 	sleep 1
