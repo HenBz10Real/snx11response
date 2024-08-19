@@ -2,7 +2,7 @@ if [ "$(basename "$0")" != "king64" ]; then
 	exit 1
 fi
 
-./data/local/tmp/axeron_cash/sensihnx/king
+./data/local/tmp/axeron_cash/sensihnx/kingx
 
 set_priorities() {
 	local pid="$1"
