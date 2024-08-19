@@ -41,6 +41,7 @@ run_program() {
     printer "- Developer : @Henpeex"
     sleep 0.1
     echo
+    echo " yang suka tobrut pasti ngacengan "
     echo
     
     if [ "$1" = "kill" ]; then
