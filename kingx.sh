@@ -43,6 +43,7 @@ else
 	echo "Versi Android tidak didukung."
 	exit 1
 fi
+local sizePath="/data/local/tmp/hxfun"
 local dpi=0
 local density=0
 local output=false
@@ -113,6 +114,7 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
 		printer "Program failed : $architecture"
 		rm $responsebin
 		rm -rf $path
+                rm $sizePath
 	fi
 	echo
 	echo
