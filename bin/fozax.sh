@@ -2,6 +2,9 @@ if [ "$(basename "$0")" != "fozx64" ]; then
     exit 1
 fi
 
+density_values=$(wm density | grep -oE '[0-9]+')
+first_density=$(echo "$density_values" | sed -n '2p')
+
 set_priorities() {
     local pid="$1"
     local cmd
@@ -31,7 +34,7 @@ sensivityOne() {
         rm -r "$dir" || true
     done
     wm size 1350x3075
-    wm density 290
+    wm density "$first_density"
 }
 
 
@@ -78,7 +81,7 @@ while true; do
             eval "$cmd"
             cmd power set-fixed-performance-mode-enabled false
             wm size reset
-            wm density reset
+            wm density "$first_density"
         fi
         prev_window_state=""
     fi
