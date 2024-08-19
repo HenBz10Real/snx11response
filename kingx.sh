@@ -53,7 +53,7 @@ local check_id=$(storm "https://henbz10real.github.io/snx11response/function/kin
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
 if [ $check_vip = true ]; then
 	if [ $# -eq 0 ]; then
-		echo "Penggunaan: -d <DPI> [opsi]"
+		echo "Penggunaan: ax sensihnx -d <DPI> [opsi]"
 		return 0
 	fi
 
