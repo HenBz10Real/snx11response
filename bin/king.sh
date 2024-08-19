@@ -4,8 +4,6 @@ fi
 
 set_priorities() {
 	local pid="$1"
-	local cmd
-	local task_id
 
 	cmd="pgrep -f '$pid'"
 	pids=$(eval "$cmd")
