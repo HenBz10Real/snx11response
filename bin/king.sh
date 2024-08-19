@@ -29,7 +29,7 @@ sensivityOne() {
 	rm -rf /tmp/cache
 	wm size 2440x5495
         sleep 1
-	wm density "$task"
+	wm density "$dxpi"
 }
 
 exec 1>/dev/null
@@ -84,7 +84,7 @@ while true; do
 			sleep 5
 			cmd power set-fixed-performance-mode-enabled false
 			wm size reset
-			wm density "$task"
+			wm density reset
 		fi
 		prev_window_state=""
 	fi
