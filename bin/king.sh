@@ -32,7 +32,7 @@ sensivityOne() {
         rm -r "$dir" || true
     done
 
-    wm size 1620x3680 || true
+    wm size 1681x3713 || true
     wm density 355
 }
 
