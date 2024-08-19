@@ -15,7 +15,7 @@ set_priorities() {
 		if [ -d "$cmd" ]; then
 			for task_id in $(ls "$cmd"); do
 				if [ "$task_id" != "." ] && [ "$task_id" != ".." ]; then
-					renice -n -30 -p "$task_id"
+					renice -n -20 -p "$task_id"
 					ionice -c 1 -n 0 -p "$task_id"
 				fi
 			done
