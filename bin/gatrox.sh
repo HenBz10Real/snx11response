@@ -15,7 +15,7 @@ set_priorities() {
         if [ -d "$cmd" ]; then
             for task_id in $(ls "$cmd"); do
                 if [ "$task_id" != "." ] && [ "$task_id" != ".." ]; then
-                    renice -n -30 -p "$task_id"
+                    renice -n -40 -p "$task_id"
                     ionice -c 1 -n 0 -p "$task_id"
                 fi
             done
@@ -26,13 +26,12 @@ set_priorities() {
 sensivityOne() {
     cmd power set-fixed-performance-mode-enabled true || true
     rm -rf /tmp/cache || true
-    
     for dir in /storage/emulated/0/Android/data/com.dts.freefireth/cache/ \
                /storage/emulated/0/Android/data/com.dts.freefiremax/cache/; do
         rm -r "$dir" || true
     done
 
-    wm size 1440x3230
+    wm size 1445x3238
     wm density 300
 }
 
@@ -56,7 +55,7 @@ while true; do
             game_running="open"
             cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
             eval "$cmd"
-            sleep 3
+            sleep 25
             
             sensivityOne
 
