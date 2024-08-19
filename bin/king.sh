@@ -37,7 +37,7 @@ exec 2>/dev/null
 prev_window_state=""
 game_running=""
 
-cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: Kingx | Author: Henpeex\""
+cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: KingX | Author: Henpeex\""
 eval "$cmd"
 
 for metadata in com.dts.freefireth com.dts.freefiremax com.dts.freefireadv; do
