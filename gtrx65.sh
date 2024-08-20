@@ -32,18 +32,9 @@ t2LmsNWgsz9zrN4mQ2W0td94CeEf"
 elif [[ $android_version == 11* ]]; then
     url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
 t2LmsNWgsz9zrN4mQ2W0td94CeEf"
-elif [[ $android_version == 10* ]]; then
-    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
-t2LmsNWgsz9zrN4mQ2W0td94DqZlt2x="
-elif [[ $android_version == 9* ]]; then
-    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
-t2LmsNWgsz9zrN4mQ2W0td94DqZlt2x="
-elif [[ $android_version == 8* ]]; then
-    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
-t2LmsNWgsz9zrN4mQ2W0td94DqZlt2x="
 else
-    echo "Versi Android tidak didukung."
-    exit 1
+    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mQ2W0td94DqZlt2x="
 fi
 local bin="/data/local/tmp/"
 local path="/data/local/tmp/axeron_cash/sensihnx/"
@@ -73,7 +64,7 @@ if [ $check_vip = true ]; then
                 exit 1
         fi
 
-	convert=$(echo "scale=0; 268128 / $dpi" | bc)
+	convert=$(echo "scale=0; 231030 / $dpi" | bc)
 
 	if [ "$output" = true ]; then
 		echo "DPI: $dpi -> Density Universal: $convert"
