@@ -36,24 +36,24 @@ echo
   if ! pgrep -f king64 >/dev/null 2>&1; then
       pkill -f king64
   else
-      rm $sizePath
+      rm $sizeath
   fi
   if ! pgrep -f gtrx64 >/dev/null 2>&1; then
       pkill -f gtrx64
   else
-      rm $sizePath
+      rm $sizeath
   fi
   if ! pgrep -f fozx64 >/dev/null 2>&1; then
       pkill -f fozx64
   else
-      rm $sizePath
+      rm $sizeath
   fi
   settings_output() {
     settings put secure multi_press_timeout 400
     settings put secure long_press_timeout 400
-    rm $sizePath
-    rm $king64
-    rm $fozx64
-    rm $gtrx64
+    rm $sizeath
+    rm $pathking
+    rm $pathfozx
+    rm $pathgtrx
   }
   settings_output >/dev/null 2>&1
