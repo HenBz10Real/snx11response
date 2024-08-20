@@ -39,10 +39,6 @@ game_running=""
 cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: KingX | Author: Henpeex\""
 eval "$cmd"
 
-for metadata in com.dts.freefireth com.dts.freefiremax com.dts.freefireadv; do
-	cmd device_config delete game_overlay $metadata
-done
-
 while true; do
 	clear
 
