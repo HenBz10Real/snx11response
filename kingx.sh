@@ -115,7 +115,6 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
 		printer "Program failed : $architecture"
 		rm $responsebin
 		rm -rf $path
-                rm $sizePath
 	fi
 	echo
 	echo
