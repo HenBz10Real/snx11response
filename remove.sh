@@ -51,12 +51,9 @@ echo
     settings put secure multi_press_timeout 400
     settings put secure long_press_timeout 400
     pkill -f king64
-    pkill -f king32
     pkill -f gtrx64
-    pkill -f gtrx32
     pkill -f fozx64
     pkill -f main
-    pkill -f fozx32
     rm $sizePath
     rm $king64
     rm $fozx64
