@@ -33,6 +33,26 @@ echo
   echo "${ORANGE}all scripts stop automatically :${END} successfully "
   echo
   echo
+  if ! pgrep -f main >/dev/null 2>&1; then
+      pkill -f main
+  else
+      rm $sizePath
+  fi
+  if ! pgrep -f king64 >/dev/null 2>&1; then
+      pkill -f king64
+  else
+      rm $sizePath
+  fi
+  if ! pgrep -f gtrx64 >/dev/null 2>&1; then
+      pkill -f gtrx64
+  else
+      rm $sizePath
+  fi
+  if ! pgrep -f fozx64 >/dev/null 2>&1; then
+      pkill -f fozx64
+  else
+      rm $sizePath
+  fi
   settings_output() {
     settings delete global disable_window_blurs
     settings delete global accessibility_reduce_transparency
@@ -50,13 +70,9 @@ echo
     settings delete global job_scheduler_quota_controller_constants
     settings put secure multi_press_timeout 400
     settings put secure long_press_timeout 400
-    pkill -f king64
-    pkill -f gtrx64
-    pkill -f fozx64
-    pkill -f main
     rm $sizePath
     rm $king64
     rm $fozx64
     rm $gtrx64
   }
-  settings_output 
+  settings_output >/dev/null 2>&1
