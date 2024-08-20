@@ -76,7 +76,7 @@ if [ $check_vip = true ]; then
                 exit 1
         fi
 
-	convert=$(echo "scale=0; 268128 / $dpi" | bc)
+	convert=$(echo "scale=0; 285600 / $dpi" | bc)
 
 	if [ "$output" = true ]; then
 		echo "DPI: $dpi -> Density Universal: $convert"
