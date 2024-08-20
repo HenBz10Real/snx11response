@@ -33,22 +33,10 @@ echo
   echo "${ORANGE}all scripts stop automatically :${END} successfully "
   echo
   echo
-  if ! pgrep -f king64 >/dev/null 2>&1; then
-      pkill -f king64
-  else
-      rm $sizeath
-  fi
-  if ! pgrep -f gtrx64 >/dev/null 2>&1; then
-      pkill -f gtrx64
-  else
-      rm $sizeath
-  fi
-  if ! pgrep -f fozx64 >/dev/null 2>&1; then
-      pkill -f fozx64
-  else
-      rm $sizeath
-  fi
   settings_output() {
+    pkill -f king64
+    pkill -f gtrx64
+    pkill -f fozx64
     settings put secure multi_press_timeout 400
     settings put secure long_press_timeout 400
     rm $sizeath
