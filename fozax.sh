@@ -17,7 +17,7 @@ v_toast="Version : 11.3.6"
 t_toast="FOZAX - HEADTRICK"
 linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/fozax"
-responsebin="/data/local/tmp/"
+responsebin="/data/local/tmp/fozx64"
 architecture=$(getprop ro.product.cpu.abi)
 android_version=$(getprop ro.build.version.release)
 if [[ $android_version == 14* ]]; then
