@@ -30,18 +30,9 @@ t2LmsNWgsz9zrN4mr2clQp5qrR=="
 elif [[ $android_version == 11* ]]; then
 	url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
 t2LmsNWgsz9zrN4mr2clQp5qrR=="
-elif [[ $android_version == 10* ]]; then
-	url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
-t2LmsNWgsz9zrN4mr2clQqDpCeEf"
-elif [[ $android_version == 9* ]]; then
-	url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
-t2LmsNWgsz9zrN4mr2clQqDpCeEf"
-elif [[ $android_version == 8* ]]; then
-	url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
-t2LmsNWgsz9zrN4mr2clQqDpCeEf"
 else
-	echo "Versi Android tidak didukung."
-	exit 1
+	url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mr2clQqDpCeEf"
 fi
 local sizePath="/data/local/tmp/hxfun"
 local dpi=0
