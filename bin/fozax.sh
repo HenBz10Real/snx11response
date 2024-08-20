@@ -2,7 +2,7 @@ if [ "$(basename "$0")" != "fozx64" ]; then
     exit 1
 fi
 
-
+source /data/local/tmp/hxfun
 
 set_priorities() {
     local pid="$1"
@@ -72,7 +72,6 @@ while true; do
     else
         if [ "$game_running" = "open" ]; then
             game_running=""
-            sleep 3
             cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
             eval "$cmd"
             cmd power set-fixed-performance-mode-enabled false
