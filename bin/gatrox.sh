@@ -30,8 +30,6 @@ sensivityOne() {
     cmd power set-fixed-performance-mode-enabled true || true
     rm -rf /tmp/cache || true
     wm size 1445x3238
-    sleep 1
-    wm density "$task"
 }
 
 
@@ -57,6 +55,7 @@ while true; do
             sleep 7
             
             sensivityOne
+            wm density $size
 
             cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
             pids=$(eval "$cmd")
