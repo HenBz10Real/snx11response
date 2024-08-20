@@ -4,8 +4,6 @@ fi
 
 source /data/local/tmp/hxfun
 
-task="wm density | awk '/Override density/ {print $3}'"
-
 set_priorities() {
     local pid="$1"
     local cmd
