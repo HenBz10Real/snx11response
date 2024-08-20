@@ -73,7 +73,7 @@ while true; do
 			eval "$cmd"
 			cmd power set-fixed-performance-mode-enabled false
 			wm size reset
-			wm density reset
+			wm density 453
 		fi
 		prev_window_state=""
 	fi
