@@ -75,7 +75,6 @@ while true; do
 			game_running=""
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
 			eval "$cmd"
-			sleep 5
 			cmd power set-fixed-performance-mode-enabled false
 			wm size reset
 			wm density reset
