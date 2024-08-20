@@ -33,11 +33,6 @@ echo
   echo "${ORANGE}all scripts stop automatically :${END} successfully "
   echo
   echo
-  if ! pgrep -f main >/dev/null 2>&1; then
-      pkill -f main
-  else
-      rm $sizePath
-  fi
   if ! pgrep -f king64 >/dev/null 2>&1; then
       pkill -f king64
   else
