@@ -11,9 +11,9 @@ text="$1"
 echo
 }
   END='\033[0m'
-  local king64="/data/local/tmp/king64"
-  local fozx64="/data/local/tmp/fozx64"
-  local gtrx64="/data/local/tmp/gtrx64"
+  local pathking="/data/local/tmp/king64"
+  local pathfozx="/data/local/tmp/fozx64"
+  local pathgtrx="/data/local/tmp/gtrx64"
   local sizeath="/data/local/tmp/hxfun"
   ORANGE='\033[38;2;255;85;3m'
   echo ""
