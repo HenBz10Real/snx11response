@@ -55,5 +55,6 @@ echo
     rm $pathking
     rm $pathfozx
     rm $pathgtrx
+    cmd notification post -S bigtext -t 'SENSIXPRO+' 'Tag' 'Remove Berhasil ( jika mau main lagi silahkan aktifin sensix terlebih dahulu )'
   }
   settings_output >/dev/null 2>&1
