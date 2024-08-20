@@ -72,8 +72,8 @@ if [ $check_vip = true ]; then
 	fi
 
 	if [ $dpi -le 380 ] || [ $dpi -ge 1000 ]; then
-        echo "Warning: Nilai DPI harus lebih besar dari 380 dan kurang dari 1000!."
-        return 1
+                echo "Warning: Nilai DPI harus lebih besar dari 380 dan kurang dari 1000!."
+                return 1
         fi
 
 	convert=$(echo "scale=0; 268128 / $dpi" | bc)
