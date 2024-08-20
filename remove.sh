@@ -37,6 +37,8 @@ echo
     pkill -f king64
     pkill -f gtrx64
     pkill -f fozx64
+    wm size reset 
+    wm density reset
     settings put secure multi_press_timeout 400
     settings put secure long_press_timeout 400
     rm $sizeath
