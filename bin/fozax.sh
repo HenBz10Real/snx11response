@@ -2,7 +2,7 @@ if [ "$(basename "$0")" != "fozx64" ]; then
     exit 1
 fi
 
-task="wm density | awk '/Override density/ {print $3}'"
+
 
 set_priorities() {
     local pid="$1"
@@ -29,9 +29,7 @@ set_priorities() {
 sensivityOne() {
     cmd power set-fixed-performance-mode-enabled true || true
     rm -rf /tmp/cache
-    wm size 1350x3075
-    sleep 1
-    wm density "$task"
+    wm size 1369x3075
 }
 
 
@@ -57,6 +55,7 @@ while true; do
             sleep 6
             
             sensivityOne
+            wm density $size
 
             cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
             pids=$(eval "$cmd")
