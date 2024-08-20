@@ -16,7 +16,6 @@ echo
   local gtrx64="/data/local/tmp/gtrx64"
   local sizePath="/data/local/tmp/hxfun"
   ORANGE='\033[38;2;255;85;3m'
-  sleep 1 && rm -rf /data/local/tmp/axeron_cash/sensihnx/
   echo ""
   sleep 1
   echo ""
@@ -63,4 +62,4 @@ echo
     rm $fozx64
     rm $gtrx64
   }
-  settings_output >/dev/null 2>&1
+  settings_output 
