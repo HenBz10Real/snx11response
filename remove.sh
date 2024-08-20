@@ -14,7 +14,7 @@ echo
   local king64="/data/local/tmp/king64"
   local fozx64="/data/local/tmp/fozx64"
   local gtrx64="/data/local/tmp/gtrx64"
-  local sizePath="/data/local/tmp/hxfun"
+  local sizeath="/data/local/tmp/hxfun"
   ORANGE='\033[38;2;255;85;3m'
   echo ""
   sleep 1
@@ -49,20 +49,6 @@ echo
       rm $sizePath
   fi
   settings_output() {
-    settings delete global disable_window_blurs
-    settings delete global accessibility_reduce_transparency
-    settings delete global zram_enabled
-    settings delete global wifi_power_save
-    settings delete global mobile_data_always_on
-    settings delete global enhanced_processing
-    settings delete secure screensaver_enabled
-    settings delete secure assistant
-    settings delete global google_core_control
-    settings delete secure adaptive_connectivity_enabled
-    settings delete global device_idle_constants
-    settings delete global activity_manager_constants
-    settings delete global job_scheduler_constants 
-    settings delete global job_scheduler_quota_controller_constants
     settings put secure multi_press_timeout 400
     settings put secure long_press_timeout 400
     rm $sizePath
