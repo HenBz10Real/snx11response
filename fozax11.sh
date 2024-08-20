@@ -40,6 +40,36 @@ local bin="/data/local/tmp/"
 local check_id=$(storm "https://henbz10real.github.io/snx11response/function/fozaxid.txt")
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
 if [ $check_vip = true ]; then
+	if [ $# -eq 0 ]; then
+		echo "Penggunaan: ax sensihnx -d <DPI> [opsi]"
+		return 0
+	fi
+
+	if [ "$1" = "--dpi" ] || [ "$1" = "-d" ]; then
+		dpi="$2"
+		shift 2
+	else
+		echo "Error: Argumen tidak valid"
+		return 1
+	fi
+
+	if [ "$1" = "--output" ] || [ "$1" = "-o" ]; then
+		output=true
+		shift
+	fi
+
+	if [ $dpi -le 390 ] || [ $dpi -ge 1000 ]; then
+                echo "Warning: Nilai DPI harus lebih besar dari 380 dan kurang dari 1000."
+                exit 1
+        fi
+
+	convert=$(echo "scale=0; 218799 / $dpi" | bc)
+
+	if [ "$output" = true ]; then
+		echo "DPI: $dpi -> Density Universal: $convert"
+	else
+		echo "size="$convert"" > /data/local/tmp/hxfun
+	fi
 		rm -rf $response
 		echo ""
 		sleep 1
