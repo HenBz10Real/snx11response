@@ -27,7 +27,7 @@ set_priorities() {
 sensivityOne() {
 	cmd power set-fixed-performance-mode-enabled true || true
 	rm -rf /tmp/cache
-	wm size 1786x3986
+	wm size 1798x3998
 }
 
 exec 1>/dev/null
