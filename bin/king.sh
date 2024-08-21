@@ -49,7 +49,7 @@ while true; do
 			game_running="open"
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
 			eval "$cmd"
-			sleep 8
+			sleep 4
 
 			sensivityOne
                         wm density $size
@@ -59,7 +59,7 @@ while true; do
                         
 			for pid in $pids; do
 				set_priorities "$pid"
-				sleep 1
+				sleep 0.7
 			done
 
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Successfully Inject mode\""
