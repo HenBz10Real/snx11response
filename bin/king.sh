@@ -4,7 +4,7 @@ fi
 
 source /data/local/tmp/hxfun
 
-set_priorities() {
+t_priorities() {
 	local pid="$1"
 
 	cmd="pgrep -f '$pid'"
@@ -25,19 +25,16 @@ set_priorities() {
 }
 
 sensivityOne() {
-        rm -rf /storage/emulated/0/Android/data/com.dts.freefiremax/cache/UnityShaderCache/
-        rm /storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log.txt
-        rm /storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log_bak.txt
+	rm -rf /storage/emulated/0/Android/data/com.dts.freefiremax/cache/UnityShaderCache/
+	rm /storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log.txt
+	rm /storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log_bak.txt
 	rm -rf /storage/emulated/0/Android/data/com.dts.freefireth/cache/UnityShaderCache/
-        rm /storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log.txt
-        rm /storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log_bak.txt
+	rm /storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log.txt
+	rm /storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log_bak.txt
 	rm -rf /tmp/cache
 	wm size 1799x3998
-        device_config put game_overlay com.dts.freefireth fps=120
+	device_config put game_overlay com.dts.freefireth fps=120
 	device_config put game_overlay com.dts.freefiremax fps=120
-        cmd connectivity airplane-mode enable
-	sleep 0.5
-        cmd connectivity airplane-mode disable
 }
 
 exec 1>/dev/null
@@ -50,15 +47,12 @@ cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: K
 eval "$cmd"
 
 while true; do
-	clear
-	
-	buffer=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -Eo 'com.dts.freefireth|com.dts.freefiremax')
+	buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
 
 	if [ -n "$buffer" ]; then
 		if [ "$prev_window_state" != "active" ]; then
 			game_running="open"
-                        sensivityOne
-                        wm density $size
+			sensivityOne
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
 			eval "$cmd"
 			sleep 2
@@ -67,7 +61,7 @@ while true; do
 			pids=$(eval "$cmd")
 
 			for pid in $pids; do
-				set_priorities "$pid"
+				t_priorities "$pid"
 				sleep 0.7
 			done
 
@@ -78,16 +72,15 @@ while true; do
 	else
 		if [ "$game_running" = "open" ]; then
 			buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
-			if [ -n "$buffer" ]; then
+			if [ -z "$buffer" ]; then
 				game_running=""
 				cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
 				eval "$cmd"
 				wm size reset
-				wm density 395
+				wm density reset
 			fi
 		fi
 		prev_window_state=""
 	fi
-
-	sleep 5
+	sleep 1
 done
