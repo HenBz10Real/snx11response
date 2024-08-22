@@ -35,6 +35,9 @@ sensivityOne() {
         rm /storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log_bak.txt
 	rm -rf /tmp/cache
 	wm size 1798x3998
+        device_config put game_overlay com.dts.freefireth fps=120
+	device_config put game_overlay com.dts.freefiremax fps=120
+        am broadcast -a android.intent.action.GAME_MODE_CHANGED --es mode 2
         cmd connectivity airplane-mode enable
 	sleep 0.5
         cmd connectivity airplane-mode disable
