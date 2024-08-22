@@ -25,13 +25,19 @@ t_priorities() {
 }
 
 sensivityOne() {
-	rm -rf /storage/emulated/0/Android/data/com.dts.freefiremax/cache/UnityShaderCache/
-	rm /storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log.txt
-	rm /storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log_bak.txt
-	rm -rf /storage/emulated/0/Android/data/com.dts.freefireth/cache/UnityShaderCache/
-	rm /storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log.txt
-	rm /storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log_bak.txt
-	rm -rf /tmp/cache
+local paths=(
+        "/storage/emulated/0/Android/data/com.dts.freefiremax/cache/UnityShaderCache/"
+        "/storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log.txt"
+        "/storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log_bak.txt"
+        "/storage/emulated/0/Android/data/com.dts.freefireth/cache/UnityShaderCache/"
+        "/storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log.txt"
+        "/storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log_bak.txt"
+        "/tmp/cache"
+    )
+
+    for path in "${paths[@]}"; do
+        rm -rf "$path"
+    done
 	wm size 1799x3998
 	wm density reset
 	device_config put game_overlay com.dts.freefireth fps=120
