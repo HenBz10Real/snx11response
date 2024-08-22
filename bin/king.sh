@@ -25,7 +25,7 @@ t_priorities() {
 }
 
 sensivityOne() {
-local paths=(
+     local paths=(
         "/storage/emulated/0/Android/data/com.dts.freefiremax/cache/UnityShaderCache/"
         "/storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log.txt"
         "/storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log_bak.txt"
