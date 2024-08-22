@@ -28,7 +28,6 @@ sensivityOne() {
         rm -rf /storage/emulated/0/Android/data/com.dts.freefiremax/cache/UnityShaderCache/
         rm /storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log.txt
         rm /storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log_bak.txt
-	cmd power set-fixed-performance-mode-enabled true || true
 	rm -rf /tmp/cache
 	wm size 1798x3998
 }
@@ -75,7 +74,6 @@ while true; do
 				game_running=""
 				cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
 				eval "$cmd"
-				cmd power set-fixed-performance-mode-enabled false
 				wm size reset
 				wm density 395
 			fi
