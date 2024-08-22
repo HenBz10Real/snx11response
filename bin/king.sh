@@ -33,7 +33,7 @@ sensivityOne() {
 	rm /storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log_bak.txt
 	rm -rf /tmp/cache
 	wm size 1799x3998
-        wm density reset
+	wm density reset
 	device_config put game_overlay com.dts.freefireth fps=120
 	device_config put game_overlay com.dts.freefiremax fps=120
 }
@@ -48,13 +48,14 @@ cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: K
 eval "$cmd"
 
 while true; do
-	buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
+	proc_buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
+	window_buffer=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -Eo 'com.dts.freefireth|com.dts.freefiremax')
 
-	if [ -n "$buffer" ]; then
+	if [ -n "$proc_buffer" ] && [ -n "$window_buffer" ]; then
 		if [ "$prev_window_state" != "active" ]; then
 			game_running="open"
 			sensivityOne
-                        wm density $size
+			wm density $size
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
 			eval "$cmd"
 			sleep 2
@@ -73,8 +74,10 @@ while true; do
 		prev_window_state="active"
 	else
 		if [ "$game_running" = "open" ]; then
-			buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
-			if [ -z "$buffer" ]; then
+		
+			proc_buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
+
+			if [ -z "$proc_buffer" ]; then
 				game_running=""
 				cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
 				eval "$cmd"
@@ -84,5 +87,6 @@ while true; do
 		fi
 		prev_window_state=""
 	fi
+
 	sleep 1
 done
