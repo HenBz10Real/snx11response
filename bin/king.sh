@@ -52,6 +52,7 @@ while true; do
 			sleep 5
 
 			sensivityOne
+                        wm density $size
 
 			cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
 			pids=$(eval "$cmd")
