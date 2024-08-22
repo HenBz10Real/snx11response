@@ -33,6 +33,9 @@ sensivityOne() {
         rm /storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log_bak.txt
 	rm -rf /tmp/cache
 	wm size 1798x3998
+        cmd connectivity airplane-mode enable
+	sleep 1
+        cmd connectivity airplane-mode disable
 }
 
 exec 1>/dev/null
