@@ -33,6 +33,7 @@ sensivityOne() {
 	rm /storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log_bak.txt
 	rm -rf /tmp/cache
 	wm size 1799x3998
+        wm density reset
 	device_config put game_overlay com.dts.freefireth fps=120
 	device_config put game_overlay com.dts.freefiremax fps=120
 }
@@ -53,6 +54,7 @@ while true; do
 		if [ "$prev_window_state" != "active" ]; then
 			game_running="open"
 			sensivityOne
+                        wm density $size
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
 			eval "$cmd"
 			sleep 2
