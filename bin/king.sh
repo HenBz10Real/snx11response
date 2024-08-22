@@ -47,12 +47,11 @@ while true; do
 	if [ -n "$buffer" ]; then
 		if [ "$prev_window_state" != "active" ]; then
 			game_running="open"
+                        sensivityOne
+                        wm density $size
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
 			eval "$cmd"
 			sleep 5
-
-			sensivityOne
-                        wm density $size
 
 			cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
 			pids=$(eval "$cmd")
