@@ -48,10 +48,9 @@ cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: K
 eval "$cmd"
 
 while true; do
-	proc_buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
 	window_buffer=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -Eo 'com.dts.freefireth|com.dts.freefiremax')
 
-	if [ -n "$proc_buffer" ] && [ -n "$window_buffer" ]; then
+	if [ -n "$window_buffer" ]; then
 		if [ "$prev_window_state" != "active" ]; then
 			game_running="open"
 			sensivityOne
@@ -82,6 +81,7 @@ while true; do
 				game_running=""
 				cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
 				eval "$cmd"
+                                sleep 0.1
 				wm size reset
 				wm density reset
 			fi
