@@ -55,6 +55,7 @@ while true; do
 		if [ "$prev_window_state" != "active" ]; then
 			game_running="open"
 			sensivityOne
+                        sleep 0.5
 			wm density $size
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
 			eval "$cmd"
