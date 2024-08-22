@@ -38,10 +38,11 @@ local paths=(
     for path in "${paths[@]}"; do
         rm -rf "$path"
     done
-	wm size 1799x3998
-	wm density reset
-	device_config put game_overlay com.dts.freefireth fps=120
-	device_config put game_overlay com.dts.freefiremax fps=120
+    
+    wm size 1799x3998
+    wm density reset
+    device_config put game_overlay com.dts.freefireth fps=120
+    device_config put game_overlay com.dts.freefiremax fps=120
 }
 
 exec 1>/dev/null
