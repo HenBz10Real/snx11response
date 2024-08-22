@@ -28,6 +28,9 @@ sensivityOne() {
         rm -rf /storage/emulated/0/Android/data/com.dts.freefiremax/cache/UnityShaderCache/
         rm /storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log.txt
         rm /storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log_bak.txt
+	rm -rf /storage/emulated/0/Android/data/com.dts.freefireth/cache/UnityShaderCache/
+        rm /storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log.txt
+        rm /storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log_bak.txt
 	rm -rf /tmp/cache
 	wm size 1798x3998
 }
