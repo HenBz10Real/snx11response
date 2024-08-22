@@ -34,7 +34,7 @@ sensivityOne() {
 	rm -rf /tmp/cache
 	wm size 1798x3998
         cmd connectivity airplane-mode enable
-	sleep 1
+	sleep 0.5
         cmd connectivity airplane-mode disable
 }
 
