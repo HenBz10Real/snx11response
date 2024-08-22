@@ -77,7 +77,7 @@ while true; do
 		
 			proc_buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
 
-			if [ -n "$proc_buffer" ]; then
+			if [ -z "$proc_buffer" ]; then
 				game_running=""
 				cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
 				eval "$cmd"
