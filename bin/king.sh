@@ -49,7 +49,7 @@ while true; do
 			game_running="open"
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
 			eval "$cmd"
-			sleep 4
+			sleep 5
 
 			sensivityOne
 
