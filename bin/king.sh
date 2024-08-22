@@ -61,7 +61,7 @@ while true; do
                         wm density $size
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
 			eval "$cmd"
-			sleep 5
+			sleep 2
 
 			cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
 			pids=$(eval "$cmd")
