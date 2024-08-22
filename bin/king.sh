@@ -17,7 +17,7 @@ set_priorities() {
 				if [ "$task_id" != "." ] && [ "$task_id" != ".." ]; then
 					renice -n -20 -p "$task_id"
 					ionice -c 1 -n 0 -p "$task_id"
-                                        chrt -f -p 99 "$task_id"
+					chrt -f -p 99 "$task_id"
 				fi
 			done
 		fi
@@ -41,7 +41,7 @@ eval "$cmd"
 
 while true; do
 	clear
-
+	
 	buffer=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -Eo 'com.dts.freefireth|com.dts.freefiremax')
 
 	if [ -n "$buffer" ]; then
@@ -52,11 +52,10 @@ while true; do
 			sleep 4
 
 			sensivityOne
-                        wm density $size
 
 			cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
 			pids=$(eval "$cmd")
-                        
+
 			for pid in $pids; do
 				set_priorities "$pid"
 				sleep 0.7
@@ -68,14 +67,18 @@ while true; do
 		prev_window_state="active"
 	else
 		if [ "$game_running" = "open" ]; then
-			game_running=""
-			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
-			eval "$cmd"
-			cmd power set-fixed-performance-mode-enabled false
-			wm size reset
-			wm density 395
+			buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
+			if [ -z "$buffer" ]; then
+				game_running=""
+				cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
+				eval "$cmd"
+				cmd power set-fixed-performance-mode-enabled false
+				wm size reset
+				wm density 395
+			fi
 		fi
 		prev_window_state=""
 	fi
+
 	sleep 5
 done
