@@ -82,6 +82,7 @@ while true; do
 				cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
 				eval "$cmd"
                                 sleep 0.1
+				device_config delete game_overlay
 				wm size reset
 				wm density reset
 			fi
