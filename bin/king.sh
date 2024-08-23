@@ -1,3 +1,4 @@
+#!/system/bin/sh
 if [ "$(basename "$0")" != "king64" ]; then
 	exit 1
 fi
@@ -5,37 +6,36 @@ fi
 source /data/local/tmp/hxfun
 
 t_priorities() {
-	local pid="$1"
+ pid="$1"
 
 	cmd="pgrep -f '$pid'"
 	pids=$(eval "$cmd")
 
 	for p in $pids; do
-		cmd="/proc/$p/task/"
-		if [ -d "$cmd" ]; then
-			for task_id in $(ls "$cmd"); do
-				if [ "$task_id" != "." ] && [ "$task_id" != ".." ]; then
-					renice -n -20 -p "$task_id"
-					ionice -c 1 -n 0 -p "$task_id"
-					chrt -f -p 99 "$task_id"
-				fi
-			done
-		fi
-	done
+    cmd="/proc/$p/task/"
+    if [ -d "$cmd" ]; then
+        for task_id in "$cmd"*/; do
+            task_id=$(basename "$task_id")
+            if [ "$task_id" != "." ] && [ "$task_id" != ".." ]; then
+                renice -n -20 -p "$task_id"
+                ionice -c 1 -n 0 -p "$task_id"
+                chrt -f -p 99 "$task_id"
+            fi
+        done
+    fi
+done
 }
 
 sensivityOne() {
-    local paths=(
-        "/storage/emulated/0/Android/data/com.dts.freefiremax/cache/UnityShaderCache/"
-        "/storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log.txt"
-        "/storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log_bak.txt"
-        "/storage/emulated/0/Android/data/com.dts.freefireth/cache/UnityShaderCache/"
-        "/storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log.txt"
-        "/storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log_bak.txt"
-        "/tmp/cache"
-    )
+    paths="/storage/emulated/0/Android/data/com.dts.freefiremax/cache/UnityShaderCache/
+        /storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log.txt
+/storage/emulated/0/Android/data/com.dts.freefiremax/files/ffrtc_log_bak.txt
+        /storage/emulated/0/Android/data/com.dts.freefireth/cache/UnityShaderCache/
+        /storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log.txt
+        /storage/emulated/0/Android/data/com.dts.freefireth/files/ffrtc_log_bak.txt
+        /tmp/cache"
 
-    for path in "${paths[@]}"; do
+    for path in $paths; do
         rm -rf "$path"
     done
     
@@ -62,7 +62,7 @@ while true; do
 			game_running="open"
 			sensivityOne
                         sleep 0.5
-			wm density $size
+			wm density "$size"
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
 			eval "$cmd"
 			sleep 2
