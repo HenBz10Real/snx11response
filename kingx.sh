@@ -63,16 +63,16 @@ if [ $check_vip = true ]; then
 	fi
 
 	if [ $dpi -le 380 ] || [ $dpi -ge 1000 ]; then
-                echo "Warning: Nilai DPI harus lebih besar dari 380 dan kurang dari 1000."
-                exit 1
-        fi
+		echo "Warning: Nilai DPI harus lebih besar dari 380 dan kurang dari 1000."
+		exit 1
+	fi
 
 	convert=$(echo "scale=0; 287520 / $dpi" | bc)
 
 	if [ "$output" = true ]; then
 		echo "DPI: $dpi -> Density Universal: $convert"
 	else
-		echo "size="$convert"" > /data/local/tmp/hxfun
+		echo "size="$convert"" >/data/local/tmp/hxfun
 	fi
 	echo ""
 	sleep 1
@@ -84,7 +84,7 @@ if [ $check_vip = true ]; then
 	sleep 0.8 && echo
 	printer "- Version : $versi"
 	sleep 0.5
-        printer "- DPIset : $dpi"
+	printer "- DPIset : $dpi"
 	sleep 0.5
 	printer "- Developer : @Henpeex"
 	sleep 0.1
@@ -93,14 +93,14 @@ if [ $check_vip = true ]; then
 	status=$(pgrep -f king64) >/dev/null 2>&1
 	if [ ! "$status" ]; then
 		storm -rP "$bin" -s "${url}" -fn "king64" "$@"
-                cmd game downscale disable com.dts.freefireth && cmd game downscale disable com.dts.freefiremax >/dev/null 2>&1
+		cmd game downscale disable com.dts.freefireth && cmd game downscale disable com.dts.freefiremax >/dev/null 2>&1
 		nohup sh /data/local/tmp/king64 >/dev/null 2>&1 &
 	fi
 	sleep 2
 	status=$(pgrep -f king64) >/dev/null 2>&1
 	if [ "$status" ]; then
 		echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
-                rm $responsebin
+		rm $responsebin
 		am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
 $v_toast " --ei duration "4500" >/dev/null 2>&1
 	else
@@ -112,8 +112,8 @@ $v_toast " --ei duration "4500" >/dev/null 2>&1
 	echo
 	sleep 1
 else
-    rm -rf $path
-    rm $responsebin
+	rm -rf $path
+	rm $responsebin
 	echo
 	echo
 	echo "Invalid device, ${RED}file rusak ( buy to original script )"
