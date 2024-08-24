@@ -28,6 +28,8 @@ sensivityOne() {
 	cmd power set-fixed-performance-mode-enabled true
 	rm -rf /tmp/cache
 	wm size 1445x3238
+        sleep 0.1
+	wm density reset
 }
 
 exec 1>/dev/null
