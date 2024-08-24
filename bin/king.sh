@@ -43,7 +43,7 @@ cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: K
 eval "$cmd"
 
 while true; do
-	window_buffer=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -Eo 'com.dts.freefireth|com.dts.freefiremax')
+	window_buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
 
 	if [ -n "$window_buffer" ]; then
 		if [ "$prev_window_state" != "active" ]; then
