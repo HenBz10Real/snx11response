@@ -93,7 +93,6 @@ if [ $check_vip = true ]; then
 	status=$(pgrep -f king64) >/dev/null 2>&1
 	if [ ! "$status" ]; then
 		storm -rP "$bin" -s "${url}" -fn "king64" "$@"
-		cmd game downscale disable com.dts.freefireth && cmd game downscale disable com.dts.freefiremax >/dev/null 2>&1
 		nohup sh /data/local/tmp/king64 >/dev/null 2>&1 &
 	fi
 	sleep 2
