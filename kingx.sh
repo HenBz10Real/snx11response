@@ -102,7 +102,7 @@ if [ $check_vip = true ]; then
 		echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
 		rm $responsebin
 		am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
-$v_toast " --ei duration "4500" >/dev/null 2>&1
+$v_toast " --ei duration "4000" >/dev/null 2>&1
 	else
 		printer "Program failed : $architecture"
 		rm $responsebin
