@@ -85,5 +85,5 @@ while true; do
 		prev_window_state=""
 	fi
 
-	sleep 20
+	sleep 4
 done
