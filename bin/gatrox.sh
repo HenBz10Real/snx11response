@@ -40,25 +40,23 @@ cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: G
 eval "$cmd"
 
 while true; do
-	clear
-	
-	buffer=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -Eo 'com.dts.freefireth|com.dts.freefiremax')
+	window_buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
 
-	if [ -n "$buffer" ]; then
+	if [ -n "$window_buffer" ]; then
 		if [ "$prev_window_state" != "active" ]; then
 			game_running="open"
+			sensivityOne
+                        sleep 0.5
+			wm density "$size"
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
 			eval "$cmd"
-			sleep 4
-
-			sensivityOne
-			wm density $size
+			sleep 2
 
 			cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
 			pids=$(eval "$cmd")
 
 			for pid in $pids; do
-				set_priorities "$pid"
+				t_priorities "$pid"
 				sleep 0.7
 			done
 
@@ -68,14 +66,17 @@ while true; do
 		prev_window_state="active"
 	else
 		if [ "$game_running" = "open" ]; then
-			buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
-			if [ -z "$buffer" ]; then
+		
+			proc_buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
+
+			if [ -z "$proc_buffer" ]; then
 				game_running=""
 				cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
 				eval "$cmd"
-				cmd power set-fixed-performance-mode-enabled false
+                                sleep 0.1
+				device_config delete game_overlay
 				wm size reset
-				wm density 395
+				wm density reset
 			fi
 		fi
 		prev_window_state=""
