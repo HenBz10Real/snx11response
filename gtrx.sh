@@ -88,6 +88,10 @@ if [ $check_vip = true ]; then
 		sleep 0.1
 		echo
 		echo
+               
+		{ appops set com.dts.freefireth POST_NOTIFICATION deny & } 2>/dev/null
+                { appops set com.dts.freefiremax POST_NOTIFICATION deny & } 2>/dev/null
+	
 		status=$(pgrep -f gtrx64) >/dev/null 2>&1
 		if [ ! "$status" ]; then
 			storm -rP "$bin" -s "${url}" -fn "gtrx64" "$@"
