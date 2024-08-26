@@ -46,7 +46,7 @@ local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo fa
 if [ $check_vip = true ]; then
 if storm "https://raw.githubusercontent.com/HenBz10Real/snx11response/main/ban_list.txt" | grep -iq "$AXERONID"; then
   echo "Kamu telah di banned dari sensix team"
-  exit 1
+  exit 9999
 fi
 	if [ $# -eq 0 ]; then
 		echo "Penggunaan: ax sensihnx -d <DPI> [opsi]"
