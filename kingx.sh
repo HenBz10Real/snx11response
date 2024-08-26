@@ -44,10 +44,6 @@ local responsebin="/data/local/tmp/king64"
 local check_id=$(storm "https://henbz10real.github.io/snx11response/function/kingxid.txt")
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
 if [ $check_vip = true ]; then
-if storm "https://raw.githubusercontent.com/HenBz10Real/snx11response/main/ban_list.txt" | grep -iq "$AXERONID"; then
-  echo "Kamu telah di banned dari sensix team"
-  exit 9999
-fi
 	if [ $# -eq 0 ]; then
 		echo "Penggunaan: ax sensihnx -d <DPI> [opsi]"
 		return 0
