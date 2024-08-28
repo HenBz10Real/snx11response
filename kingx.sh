@@ -12,8 +12,8 @@ printer() {
 }
 END='\033[0m'
 ORANGE='\033[38;2;255;85;3m'
-versi="v11.5.3-(KINGX)"
-v_toast="Version : 11.5.3"
+versi="v11.5.9-(KINGX)"
+v_toast="Version : 11.5.9"
 t_toast="KINGX - HEADTRICK"
 linktree="https://linktr.ee/henvxofficial"
 architecture=$(getprop ro.product.cpu.abi)
