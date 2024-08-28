@@ -12,8 +12,8 @@ printer() {
 }
 END='\033[0m'
 ORANGE='\033[38;2;255;85;3m'
-versi="v11.4.0-(FOZAX)"
-v_toast="Version : 11.4.0"
+versi="v11.4.5-(FOZAX)"
+v_toast="Version : 11.4.5"
 t_toast="FOZAX - HEADTRICK"
 linktree="https://linktr.ee/henvxofficial"
 response="/data/local/tmp/axeron_cash/sensihnx/fozax"
