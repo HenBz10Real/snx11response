@@ -1,6 +1,6 @@
 $AXFUNif 
 if storm "https://raw.githubusercontent.com/HenBz10Real/snx11response/main/ban_list.txt" | grep -iq "$AXERONID"; then
-        echo "You has ben banned"
+        echo "You has ben banned in sensix team"
         exit 1
 fi
 printer() {
