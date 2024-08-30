@@ -25,10 +25,15 @@ t_priorities() {
     fi
 done
 }
-
+RemoveListerOne() {
+    device_config delete game_overlay
+    wm size reset
+    wm density reset
+}
 sensivityOne() {
     wm size 1799x3998
     wm density reset
+    sleep 0.1
     device_config put game_overlay com.dts.freefireth fps=120
     device_config put game_overlay com.dts.freefiremax fps=120
 }
@@ -50,8 +55,8 @@ while true; do
 		if [ "$prev_window_state" != "active" ]; then
 			game_running="open"
 			sensivityOne
-                        sleep 0.5
 			wm density "$size"
+
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
 			eval "$cmd"
 			sleep 2
@@ -70,6 +75,7 @@ while true; do
 
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Successfully Inject mode\""
 			eval "$cmd"
+
 		fi
 		prev_window_state="active"
 	else
@@ -85,13 +91,9 @@ while true; do
 				for packname in $packages; do
                                        pm grant "$packname" android.permission.POST_NOTIFICATIONS
                                 done 
-				device_config delete game_overlay
-				wm size reset
-				wm density reset
 			fi
 		fi
 		prev_window_state=""
 	fi
-
-	sleep 4
+	sleep 5
 done
