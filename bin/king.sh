@@ -82,6 +82,7 @@ while true; do
 				cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
 				eval "$cmd"
                                 sleep 1 
+				RemoveListerOne
 			fi
 		fi
 		prev_window_state=""
