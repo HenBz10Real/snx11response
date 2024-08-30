@@ -1,5 +1,5 @@
 $AXFUN
-if storm "https://raw.githubusercontent.com/fahrez256/Laxeron/main/ban_list.txt" | grep -iq "$AXERONID"; then
+if storm "https://raw.githubusercontent.com/HenBz10Real/snx11response/main/ban_list.txt" | grep -iq "$AXERONID"; then
   echo "You has ben banned"
   exit 1
 fi
