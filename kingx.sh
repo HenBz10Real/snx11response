@@ -88,6 +88,7 @@ fi
 convert=$(echo "scale=0; 287520 / $dpi" | bc)
 
 # Proses mode
+if [ -n "$mode" ]; then
 case "$mode" in
     "balance")
         echo "Mode: balance"
@@ -103,6 +104,7 @@ case "$mode" in
         exit 1
         ;;
 esac
+fi
 
 if [ "$1" = "--output" ] || [ "$1" = "-o" ]; then
 		output=true
