@@ -68,7 +68,7 @@ else
 fi
 
 # Periksa argumen mode, pastikan ada argumen tersisa
-if [ $# -gt 0 ]; then
+if [ $# -eg 0 ]; then
     if [ "$1" = "--mode" ] || [ "$1" = "-m" ]; then
         if [ -z "$2" ]; then
             echo "Error: Pilih mode : -m [ balance|performance|extreme ]."
