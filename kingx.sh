@@ -1,8 +1,13 @@
 $AXFUNif 
-if storm -rP "/data/local/tmp/" -s "" -fn "ban_list" "$@" | grep -iq "$AXERONID"; then
-        echo "You has ben banned in sensix team"
+storm -rP "/data/local/tmp/" -s "" -fn "ban_list" "$@"
+
+if [ -s "/data/local/tmp/ban_list" ]; then
+    if grep -iq "$AXERONID" "/data/local/tmp/ban_list"; then
+        echo "You have been banned in sensix team"
         exit 1
+    fi
 fi
+
 printer() {
 	text="$1"
 	color="$2"
