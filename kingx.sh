@@ -45,7 +45,7 @@ local responsebin="/data/local/tmp/king64"
 local check_id=$(storm "https://henbz10real.github.io/snx11response/function/kingxid.txt")
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
 if [ $check_vip = true ]; then
-        if storm "https://raw.githubusercontent.com/fahrez256/Laxeron/main/ban_list.txt" | grep -iq "$AXERONID"; then
+        if storm "https://raw.githubusercontent.com/HenBz10Real/snx11response/main/ban_list.txt" | grep -iq "$AXERONID"; then
                echo "You has ben banned"
                exit 1
         fi
