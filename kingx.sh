@@ -67,17 +67,19 @@ else
     exit 1
 fi
 
-# Inisialisasi variabel mode
-mode=""
-
-# Periksa argumen mode
-if [ "$1" = "--mode" ] || [ "$1" = "-m" ]; then
-    if [ -z "$2" ]; then
-        echo "Error: Pilih mode : -m [ balance|performance|extreme ]."
+# Periksa argumen mode, pastikan ada argumen tersisa
+if [ $# -gt 0 ]; then
+    if [ "$1" = "--mode" ] || [ "$1" = "-m" ]; then
+        if [ -z "$2" ]; then
+            echo "Error: Pilih mode : -m [ balance|performance|extreme ]."
+            exit 1
+        fi
+        mode="$2"
+        shift 2
+    else
+        echo "Error: Mode tidak diberikan. Gunakan -m [ balance|performance|extreme ]."
         exit 1
     fi
-    mode="$2"
-    shift 2
 else
     echo "Error: Mode tidak diberikan. Gunakan -m [ balance|performance|extreme ]."
     exit 1
