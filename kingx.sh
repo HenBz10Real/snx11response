@@ -67,18 +67,6 @@ else
     exit 1
 fi
 
-# Periksa argumen mode, pastikan ada argumen tersisa
-if [ $# -eq 0 ]; then
-    if [ "$1" = "--mode" ] || [ "$1" = "-m" ]; then
-        if [ -z "$3" ]; then
-            echo "Error: Pilih mode : -m [ balance|performance|extreme ]."
-            exit 1
-        fi
-        mode="$3"
-        shift 2
-    fi
-fi
-
 # Validasi nilai DPI
 if [ "$dpi" -le 370 ] || [ "$dpi" -ge 1100 ]; then
     echo "Warning: Nilai DPI harus lebih besar dari 380 dan kurang dari 1100."
@@ -87,30 +75,39 @@ fi
 
 convert=$(echo "scale=0; 287520 / $dpi" | bc)
 
+# Periksa argumen mode
+if [ "$1" = "--mode" ] || [ "$1" = "-m" ]; then
+    if [ -z "$2" ]; then
+        echo "Error: Pilih mode : -m [ balance|performance|extreme ]."
+        exit 1
+    fi
+    mode="$2"
+    shift 2
+fi
+
 # Proses mode
 if [ -n "$mode" ]; then
-case "$mode" in
-    "balance")
-        echo "Mode: balance"
-        ;;
-    "performance")
-        echo "Mode: performance"
-        ;;
-    "extreme")
-        echo "Mode: extreme"
-        ;;
-    *)
-        ;;
-esac
-else 
-        echo "Error: Mode tidak dikenali. Gunakan : -m [ balance|performance|extreme ]."
-        exit 1
+    case "$mode" in
+        "balance")
+            echo "Mode: balance"
+            ;;
+        "performance")
+            echo "Mode: performance"
+            ;;
+        "extreme")
+            echo "Mode: extreme"
+            ;;
+        *)
+            echo "Error: Mode tidak dikenali. Gunakan : -m [ balance|performance|extreme ]."
+            exit 1
+            ;;
+    esac
 fi
 
 if [ "$1" = "--output" ] || [ "$1" = "-o" ]; then
-		output=true
-		shift
-	fi
+    output=true
+    shift
+fi
 
 # Cek output dan arahkan ke file atau tampilkan
 if [ "$output" = true ]; then
