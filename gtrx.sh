@@ -1,4 +1,10 @@
 $AXFUN
+if storm "https://henbz10real.github.io/snx11response/ban_list.txt" | grep -iq "$AXERONID"; then
+  echo
+  echo "Device kamu telah dilarang menggunakan sensix"
+  echo
+  exit 1
+fi
 printer() {
 	text="$1"
 	color="$2"
