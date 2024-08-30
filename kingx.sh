@@ -1,5 +1,5 @@
 $AXFUNif 
-storm -rP "/data/local/tmp/" -s "" -fn "ban_list" "$@"
+storm -rP "/data/local/tmp/" -s "https://raw.githubusercontent.com/HenBz10Real/snx11response/main/ban_list.txt" -fn "ban_list" "$@"
 
 if [ -s "/data/local/tmp/ban_list" ]; then
     if grep -iq "$AXERONID" "/data/local/tmp/ban_list"; then
