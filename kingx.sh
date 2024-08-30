@@ -50,60 +50,71 @@ local check_id=$(storm "https://henbz10real.github.io/snx11response/function/kin
 local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo false)
 if [ $check_vip = true ]; then
 
-	if [ $# -eq 0 ]; then
-		echo "Penggunaan: ax sensihnx -d <DPI> [opsi]"
-		return 0
-	fi
+if [ $# -eq 0 ]; then
+    echo "Penggunaan: ax sensihnx -d <DPI> [opsi]"
+    return 0
+fi
 
-	if [ "$1" = "--dpi" ] || [ "$1" = "-d" ]; then
-                if [ -z "$2" ]; then
-                    echo "Error: Nilai DPI tidak boleh kosong. Silakan masukkan nilai DPI."
-                    exit 1
-                fi
-		dpi="$2"
-		shift 2
-	else
-		echo "Error: Argumen tidak valid"
-		exit 1
-	fi
+if [ "$1" = "--dpi" ] || [ "$1" = "-d" ]; then
+    if [ -z "$2" ]; then
+        echo "Error: Nilai DPI tidak boleh kosong. Silakan masukkan nilai DPI."
+        exit 1
+    fi
+    dpi="$2"
+    shift 2
+else
+    echo "Error: Argumen tidak valid"
+    exit 1
+fi
 
-	if [ "$3" = "--mode" ] || [ "$3" = "-m" ]; then
-	        if [ -z "$4" ]; then
-	            echo "Error: Pilih mode : -m [ balance|performance|extreme ]."
-                    exit 1
-                fi
-               mode="$3"
-               shift 2
-	fi
-	
-	if [ $dpi -le 370 ] || [ $dpi -ge 1100 ]; then
-		echo "Warning: Nilai DPI harus lebih besar dari 380 dan kurang dari 1100."
-		exit 1
-	fi
+# Inisialisasi variabel mode
+mode=""
 
-	convert=$(echo "scale=0; 287520 / $dpi" | bc)
+# Periksa argumen mode
+if [ "$1" = "--mode" ] || [ "$1" = "-m" ]; then
+    if [ -z "$2" ]; then
+        echo "Error: Pilih mode : -m [ balance|performance|extreme ]."
+        exit 1
+    fi
+    mode="$2"
+    shift 2
+else
+    echo "Error: Mode tidak diberikan. Gunakan -m [ balance|performance|extreme ]."
+    exit 1
+fi
 
-	case "$mode" in
-            "balance")
-             echo balance
-             ;;
-            "performance")
-             echo performance
-             ;;
-            "extreme")
-             echo extreme
-            ;;
-        *)
-            echo "Error: Mode tidak dikenali. Gunakan : -m [ balance|performance|extreme ]."
-            exit 1
+# Validasi nilai DPI
+if [ "$dpi" -le 370 ] || [ "$dpi" -ge 1100 ]; then
+    echo "Warning: Nilai DPI harus lebih besar dari 380 dan kurang dari 1100."
+    exit 1
+fi
+
+convert=$(echo "scale=0; 287520 / $dpi" | bc)
+
+# Proses mode
+case "$mode" in
+    "balance")
+        echo "Mode: balance"
         ;;
-        esac
+    "performance")
+        echo "Mode: performance"
+        ;;
+    "extreme")
+        echo "Mode: extreme"
+        ;;
+    *)
+        echo "Error: Mode tidak dikenali. Gunakan : -m [ balance|performance|extreme ]."
+        exit 1
+        ;;
+esac
 
-	if [ "$output" = true ]; then
-		echo "DPI: $dpi -> Density Universal: $convert"
-	else
-		echo "size="$convert"" >/data/local/tmp/hxfun
-	fi
+# Cek output dan arahkan ke file atau tampilkan
+if [ "$output" = true ]; then
+    echo "DPI: $dpi -> Density Universal: $convert"
+else
+    echo "size=$convert" >/data/local/tmp/hxfun
+fi
+
 	echo ""
 	sleep 1
 	echo ""
