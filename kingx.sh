@@ -4,6 +4,10 @@ if storm "https://henbz10real.github.io/snx11response/ban_list.txt" | grep -iq "
   exit 1
 fi
 
+packages=$(pm list packages | cut -d':' -f2)
+excluded_apps="com.dts.freefireth com.dts.freefiremax glip.gg"
+pkg=$(echo "$packages" | grep -v -E "$(echo $excluded_apps | sed 's/ /|/g')")
+
 printer() {
 	text="$1"
 	color="$2"
@@ -133,6 +137,9 @@ fi
 	sleep 0.1
 	echo
 	echo
+        for packname in $pkg; do
+            pm revoke "$packname" android.permission.POST_NOTIFICATIONS
+        done 
 
 	status=$(pgrep -f king64) >/dev/null 2>&1
 	if [ ! "$status" ]; then
