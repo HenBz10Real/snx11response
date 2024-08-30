@@ -41,6 +41,7 @@ game_running=""
 
 cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: KingX | Author: Henpeex\""
 eval "$cmd"
+packages=$(pm list packages | cut -d':' -f2)
 
 while true; do
 	window_buffer=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -Eo 'com.dts.freefireth|com.dts.freefiremax')
@@ -57,6 +58,10 @@ while true; do
 
 			cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
 			pids=$(eval "$cmd")
+
+                        for packname in $packages; do
+                               pm revoke "$packname" android.permission.POST_NOTIFICATIONS
+                        done 
 
 			for pid in $pids; do
 				t_priorities "$pid"
@@ -76,7 +81,10 @@ while true; do
 				game_running=""
 				cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
 				eval "$cmd"
-                                sleep 0.1
+                                sleep 1 
+				for packname in $packages; do
+                                       pm grant "$packname" android.permission.POST_NOTIFICATIONS
+                                done 
 				device_config delete game_overlay
 				wm size reset
 				wm density reset
