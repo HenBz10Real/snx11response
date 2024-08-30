@@ -61,17 +61,40 @@ if [ $check_vip = true ]; then
 		return 1
 	fi
 
-	if [ "$1" = "--output" ] || [ "$1" = "-o" ]; then
-		output=true
-		shift
-	fi
-
+	if [ "$1" = "--mode" ] || [ "$1" = "-m" ]; then
+	        if [ -z "$2" ]; then
+	            echo "Error: Mode tidak boleh kosong. contoh : -m [ balance|performance|extreme ]."
+                    exit 1
+                fi
+               mode="$2"
+               shift 2
+	else
+    	       echo "Error: Argumen mode tidak valid atau tidak ditemukan."
+               exit 1
+        fi
+	
 	if [ $dpi -le 370 ] || [ $dpi -ge 1100 ]; then
 		echo "Warning: Nilai DPI harus lebih besar dari 380 dan kurang dari 1100."
 		exit 1
 	fi
 
 	convert=$(echo "scale=0; 287520 / $dpi" | bc)
+
+	case "$mode" in
+            "balance")
+             echo balance
+             ;;
+            "performance")
+             echo performance
+             ;;
+            "extreme")
+             echo extreme
+            ;;
+        *)
+            echo "Error: Mode tidak dikenali. Gunakan : -m [ balance|performance|extreme ]."
+            exit 1
+        ;;
+        esac
 
 	if [ "$output" = true ]; then
 		echo "DPI: $dpi -> Density Universal: $convert"
