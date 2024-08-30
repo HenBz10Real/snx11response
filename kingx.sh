@@ -68,12 +68,12 @@ if [ $check_vip = true ]; then
 		return 1
 	fi
 
-	if [ "$1" = "--mode" ] || [ "$1" = "-m" ]; then
+	if [ "$3" = "--mode" ] || [ "$3" = "-m" ]; then
 	        if [ -z "$2" ]; then
 	            echo "Error: Pilih mode : -m [ balance|performance|extreme ]."
                     exit 1
                 fi
-               mode="$2"
+               mode="$3"
                shift 2
 	fi
 	
