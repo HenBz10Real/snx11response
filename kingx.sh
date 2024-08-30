@@ -41,7 +41,6 @@ t2LmsNWgsz9zrN4mr2clQqDpCeEf"
 fi
 local sizePath="/data/local/tmp/hxfun"
 local dpi=0
-local mode=""
 local density=0
 local output=false
 local bin="/data/local/tmp/"
@@ -65,11 +64,11 @@ if [ $check_vip = true ]; then
 		shift 2
 	else
 		echo "Error: Argumen tidak valid"
-		return 1
+		exit 1
 	fi
 
 	if [ "$3" = "--mode" ] || [ "$3" = "-m" ]; then
-	        if [ -z "$2" ]; then
+	        if [ -z "$4" ]; then
 	            echo "Error: Pilih mode : -m [ balance|performance|extreme ]."
                     exit 1
                 fi
