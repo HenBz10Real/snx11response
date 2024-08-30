@@ -70,11 +70,11 @@ fi
 # Periksa argumen mode, pastikan ada argumen tersisa
 if [ $# -eq 0 ]; then
     if [ "$1" = "--mode" ] || [ "$1" = "-m" ]; then
-        if [ -z "$2" ]; then
+        if [ -z "$3" ]; then
             echo "Error: Pilih mode : -m [ balance|performance|extreme ]."
             exit 1
         fi
-        mode="$2"
+        mode="$3"
         shift 2
     fi
 fi
@@ -100,10 +100,11 @@ case "$mode" in
         echo "Mode: extreme"
         ;;
     *)
-        echo "Error: Mode tidak dikenali. Gunakan : -m [ balance|performance|extreme ]."
-        exit 1
         ;;
 esac
+else 
+        echo "Error: Mode tidak dikenali. Gunakan : -m [ balance|performance|extreme ]."
+        exit 1
 fi
 
 if [ "$1" = "--output" ] || [ "$1" = "-o" ]; then
