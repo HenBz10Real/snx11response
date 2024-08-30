@@ -2,7 +2,7 @@ $AXFUNif
 storm -rP "/data/local/tmp/" -s "https://raw.githubusercontent.com/HenBz10Real/snx11response/main/ban_list.txt" -fn "ban_list" "$@"
 
 if [ -s "/data/local/tmp/ban_list" ]; then
-    if grep -iq "$AXERONID" "/data/local/tmp/ban_list"; then
+    if tr ',' '\n' < "/data/local/tmp/ban_list" | grep -iq "^$AXERONID$"; then
         echo "You have been banned in sensix team"
         exit 1
     fi
