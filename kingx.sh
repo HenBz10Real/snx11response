@@ -64,7 +64,7 @@ if [ $check_vip = true ]; then
 
 	if [ "$1" = "--mode" ] || [ "$1" = "-m" ]; then
 	        if [ -z "$2" ]; then
-	            echo "Error: Mode tidak boleh kosong. contoh : -m [ balance|performance|extreme ]."
+	            echo "Error: Pilih mode : -m [ balance|performance|extreme ]."
                     exit 1
                 fi
                mode="$2"
