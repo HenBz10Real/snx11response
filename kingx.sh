@@ -36,6 +36,7 @@ t2LmsNWgsz9zrN4mr2clQqDpCeEf"
 fi
 local sizePath="/data/local/tmp/hxfun"
 local dpi=0
+local mode=""
 local density=0
 local output=false
 local bin="/data/local/tmp/"
