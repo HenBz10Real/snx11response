@@ -50,6 +50,10 @@ if [ $check_vip = true ]; then
 	fi
 
 	if [ "$1" = "--dpi" ] || [ "$1" = "-d" ]; then
+                if [ -z "$2" ]; then
+                    echo "Error: Nilai DPI tidak boleh kosong. Silakan masukkan nilai DPI."
+                    exit 1
+                fi
 		dpi="$2"
 		shift 2
 	else
@@ -62,8 +66,8 @@ if [ $check_vip = true ]; then
 		shift
 	fi
 
-	if [ $dpi -le 380 ] || [ $dpi -ge 2000 ]; then
-		echo "Warning: Nilai DPI harus lebih besar dari 380 dan kurang dari 1000."
+	if [ $dpi -le 370 ] || [ $dpi -ge 1100 ]; then
+		echo "Warning: Nilai DPI harus lebih besar dari 380 dan kurang dari 1100."
 		exit 1
 	fi
 
