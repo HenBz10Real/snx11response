@@ -137,9 +137,6 @@ fi
 	sleep 0.1
 	echo
 	echo
-        for packname in $pkg; do
-            pm revoke "$packname" android.permission.POST_NOTIFICATIONS
-        done 
 
 	status=$(pgrep -f king64) >/dev/null 2>&1
 	if [ ! "$status" ]; then
