@@ -10,7 +10,7 @@ t_priorities() {
 	cmd="pgrep -f '$pid'"
 	pids=$(eval "$cmd")
 
-	for p in $pids; do
+    for p in $pids; do
     cmd="/proc/$p/task/"
     if [ -d "$cmd" ]; then
         for task_id in "$cmd"*/; do
@@ -46,6 +46,8 @@ game_running=""
 cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: KingX | Author: Henpeex\""
 eval "$cmd"
 packages=$(pm list packages | cut -d':' -f2)
+excluded_apps="com.dts.freefireth com.dts.freefiremax glip.gg"
+pkg=$(echo "$packages" | grep -v -E "$(echo $excluded_apps | sed 's/ /|/g')")
 
 while true; do
 	window_buffer=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -Eo 'com.dts.freefireth|com.dts.freefiremax')
@@ -63,7 +65,7 @@ while true; do
 			cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
 			pids=$(eval "$cmd")
 
-                        for packname in $packages; do
+                        for packname in $pkg; do
                                pm revoke "$packname" android.permission.POST_NOTIFICATIONS
                         done 
 
@@ -87,7 +89,7 @@ while true; do
 				cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Game Closed\""
 				eval "$cmd"
                                 sleep 1 
-				for packname in $packages; do
+				for packname in $pkg; do
                                        pm grant "$packname" android.permission.POST_NOTIFICATIONS
                                 done 
 			fi
