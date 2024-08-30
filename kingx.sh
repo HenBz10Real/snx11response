@@ -110,6 +110,11 @@ case "$mode" in
         ;;
 esac
 
+if [ "$1" = "--output" ] || [ "$1" = "-o" ]; then
+		output=true
+		shift
+	fi
+
 # Cek output dan arahkan ke file atau tampilkan
 if [ "$output" = true ]; then
     echo "DPI: $dpi -> Density Universal: $convert"
