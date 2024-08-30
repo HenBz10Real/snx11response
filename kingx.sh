@@ -134,9 +134,6 @@ fi
 	echo
 	echo
 
-        { pm revoke com.dts.freefireth android.permission.POST_NOTIFICATIONS & } 2>/dev/null
-        { pm revoke com.dts.freefiremax android.permission.POST_NOTIFICATIONS & } 2>/dev/null
-	
 	status=$(pgrep -f king64) >/dev/null 2>&1
 	if [ ! "$status" ]; then
 		storm -rP "$bin" -s "${url}" -fn "king64" "$@"
