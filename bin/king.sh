@@ -7,7 +7,6 @@ source /data/local/tmp/hxfun
 
 t_priorities() {
  pid="$1"
-
 	cmd="pgrep -f '$pid'"
 	pids=$(eval "$cmd")
 
@@ -90,6 +89,8 @@ while true; do
                                 sleep 1 
 				for packname in $packages; do
                                        pm grant "$packname" android.permission.POST_NOTIFICATIONS
+                                       pm revoke com.dts.freefireth android.permission.POST_NOTIFICATIONS
+                                       pm revoke com.dts.freefiremax android.permission.POST_NOTIFICATIONS
                                 done 
 			fi
 		fi
