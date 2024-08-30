@@ -69,10 +69,7 @@ if [ $check_vip = true ]; then
                 fi
                mode="$2"
                shift 2
-	else
-    	       echo "Error: Argumen mode tidak valid atau tidak ditemukan."
-               exit 1
-        fi
+	fi
 	
 	if [ $dpi -le 370 ] || [ $dpi -ge 1100 ]; then
 		echo "Warning: Nilai DPI harus lebih besar dari 380 dan kurang dari 1100."
