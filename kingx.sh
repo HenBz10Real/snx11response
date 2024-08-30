@@ -76,13 +76,7 @@ if [ $# -eg 0 ]; then
         fi
         mode="$2"
         shift 2
-    else
-        echo "Error: Mode tidak diberikan. Gunakan -m [ balance|performance|extreme ]."
-        exit 1
     fi
-else
-    echo "Error: Mode tidak diberikan. Gunakan -m [ balance|performance|extreme ]."
-    exit 1
 fi
 
 # Validasi nilai DPI
