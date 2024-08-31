@@ -73,7 +73,7 @@ fi
 
 # Validasi nilai DPI
 if [ "$dpi" -le 370 ] || [ "$dpi" -ge 2000 ]; then
-    echo "Warning: Nilai DPI harus lebih besar dari 380 dan kurang dari 1100."
+    echo "Warning: Nilai DPI harus lebih besar dari 380 dan kurang dari 2000."
     exit 1
 fi
 
