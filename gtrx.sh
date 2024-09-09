@@ -63,7 +63,7 @@ if [ $check_vip = true ]; then
 		shift
 	fi
 
-	if [ $dpi -le 380 ] || [ $dpi -ge 1000 ]; then
+	if [ $dpi -le 380 ] || [ $dpi -ge 1400 ]; then
                 echo "Warning: Nilai DPI harus lebih besar dari 380 dan kurang dari 1000."
                 exit 1
         fi
