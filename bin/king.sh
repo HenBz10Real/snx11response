@@ -27,7 +27,8 @@ done
 RemoveListerOne() {
     device_config delete game_overlay
     wm size reset
-    wm density reset
+    sleep 1
+    wm density 406
 }
 sensivityOne() {
     wm size 1799x3998
